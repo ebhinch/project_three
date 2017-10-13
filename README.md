@@ -6,7 +6,8 @@
 ## User Stories, Wireframes, and ERDs:
 * [User Stories](https://trello.com/b/Fp7SEAV6/wdi-project-3)
 * [Wireframes](https://marvelapp.com/25ff82c)
-* ERDs <img src="/public/images/wdi-project-3.jpg">
+* ERDs 
+<img src="/public/images/wdi-project-3.jpg">
 
 
 ## LINKS TO APP
