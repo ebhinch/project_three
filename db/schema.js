@@ -58,7 +58,6 @@ const vineyardSchema = mongoose.Schema({
     // , restaurants: [restaurantSchema]
 })
 
-
 const userSchema = mongoose.Schema({
     userName: String,
     name: String,
@@ -67,11 +66,13 @@ const userSchema = mongoose.Schema({
 })
 
 // const RestaurantModel = mongoose.model("Restaurant", restaurantSchema)
-const Vineyard = mongoose.model("Vineyard", vineyardSchema)
-const Wine = mongoose.model("Wine", wineSchema)
-const User = mongoose.model("User", userSchema)
+const VineyardModel = mongoose.model("Vineyard", vineyardSchema)
+const WineModel = mongoose.model("Wine", wineSchema)
+const UserModel = mongoose.model("User", userSchema)
 
 module.exports = {
     // RestaurantModel: RestaurantModel,
-    Vineyard, Wine, User
+    VineyardModel: VineyardModel,
+    WineModel: WineModel,
+    UserModel: UserModel
 }

@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise
 
 const { Vineyard, Wine, User } = require("./schema.js")
 
-const jeffersonMeritage = new Wine({
+const jeffersonMeritage = new WineModel({
     name: "Meritage",
     vintage: "2015",
     description: "A cedar and blackberry nose followed by a bright black cherry palate, ending with balanced spice",
@@ -13,7 +13,7 @@ const jeffersonMeritage = new Wine({
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/20626121_10155404351165851_9075711873478245884_o.jpg?oh=b015976b1f7a0ce701387a41d7061bc3&oe=5A8621CF"
 })
 
-const kingCrose = new Wine({
+const kingCrose = new WineModel({
     name: "",
     vintage: "NV",
     description: "A dry rosé named after our small town of Crozet. ",
@@ -21,7 +21,7 @@ const kingCrose = new Wine({
     image: "http://www.kingfamilyvineyards.com/assets/images/products/pictures/crose.jpg"
 })
 
-const aftonFesta = new Wine({
+const aftonFesta = new WineModel({
     name: "Festa di Bacco",
     vintage: "2014",
     description: "Indicative blend: Sangiovese, Cabernet Franc, Merlot, and Petit Verdot.",
@@ -29,7 +29,7 @@ const aftonFesta = new Wine({
     image: "https://i.pinimg.com/736x/ab/71/ba/ab71ba3ca986d0882a241782796cda7f--road-trippin-wineries.jpg"
 })
 
-const jefferson = new Vineyard({
+const jefferson = new VineyardModel({
     name: "Jefferson Vineyards",
     address: "1353 Thomas Jefferson Parkway Charlottesville, Virginia 22902",
     website: "http://jeffersonvineyards.com/",
@@ -37,7 +37,7 @@ const jefferson = new Vineyard({
     wines: [jeffersonMeritage]
 })
 
-const afton = new Vineyard({
+const afton = new VineyardModel({
     name: "Afton Mountain Vineyards",
     address: "234 Vineyard Lane, Afton, Virginia 22920",
     website: "http://www.aftonmountainvineyards.com/",
@@ -45,7 +45,7 @@ const afton = new Vineyard({
     wines: [aftonFesta]
 })
 
-const king = new Vineyard({
+const king = new VineyardModel({
     name: "King Family Vineyards",
     address: "6550 Roseland Farm Crozet, VA 22932",
     website: "http://www.kingfamilyvineyards.com/",
@@ -53,36 +53,37 @@ const king = new Vineyard({
     wines: [kingCrose]
 })
 
-const victoria = new User({
+const victoria = new UserModel({
     userName: "vicky.t",
     name: "Victoria",
     hometown: "Atlanta",
     season: "Spring 2018"
 })
 
-const skylar = new User({
+const skylar = new UserModel({
     userName: "skyguy",
     name: "Skylar",
     hometown: "Asheville",
     season: "Winter 2017"
 })
 
-const hunter = new User({
+const hunter = new UserModel({
     userName: "the.mad.duke",
     name: "Hunter",
     hometown: "Decatur",
     season: "Fall 2018"
 })
 
-User.remove({})
+UserModel.remove({})
     .then(() => hunter.save())
     .then(() => skylar.save())
     .then(() => victoria.save())
     .then(() => console.log("Successful Saved Users"))
 
-Vineyard.remove({})
+VineyardModel.remove({})
     .then(() => king.save())
     .then(() => afton.save())
     .then(() => jefferson.save())
     .then(() => console.log("Successful Saved Vineyards"))
     .then(() => mongoose.connection.close())
+
