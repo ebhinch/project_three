@@ -13,6 +13,8 @@ import UserDetailPage from "./components/user/UserDetailPage.js"
 import VineyardPage from "./components/vineyard/VineyardPage.js"
 import NavBar from "./components/NavBar.js"
 import Footer from "./components/Footer.js"
+import ContactPage from "./components/contact/ContactPage.js"
+// import Contact from "./components/Contact.js"
 
 class App extends Component {
   render() {
@@ -31,6 +33,7 @@ class App extends Component {
             <Route exact path="/users" component={UserPage} />
             <Route exact path="/vineyards" component={VineyardPage} />
             <Route exact path="/users/:userId" component={UserDetailPage} />
+            <Route exact path="/contact" component={ContactPage} />
           </Switch>
           <Footer />
         </div>
