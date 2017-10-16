@@ -12,10 +12,12 @@ import UserPage from "./components/user/UserPage.js"
 import IndividualUserPage from "./components/user/IndividualUserPage.js"
 import VineyardPage from "./components/vineyard/VineyardPage.js"
 import IndividualVineyardPage from "./components/vineyard/IndividualVineyardPage.js"
+import WinePage from "./components/wine/WinePage.js"
 import NavBar from "./components/NavBar.js"
 import Footer from "./components/Footer.js"
 import ContactPage from "./components/contact/ContactPage.js"
 import styled from "styled-components"
+
 
 class App extends Component {
   render() {
@@ -36,6 +38,7 @@ class App extends Component {
             <Route exact path="/vineyards/:vineyardId" component={IndividualVineyardPage} />
             <Route exact path="/users/:userId" component={IndividualUserPage} />
             <Route exact path="/contact" component={ContactPage} />
+            <Route exact path="/vineyards/:vineyardId/:wineId" component={WinePage} />
           </Switch>
           <Footer />
         </div>
