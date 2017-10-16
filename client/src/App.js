@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 // Rename BrowserRouter to Router
@@ -14,7 +14,6 @@ import VineyardPage from "./components/vineyard/VineyardPage.js"
 import NavBar from "./components/NavBar.js"
 import Footer from "./components/Footer.js"
 import ContactPage from "./components/contact/ContactPage.js"
-// import Contact from "./components/Contact.js"
 
 class App extends Component {
   render() {

@@ -3,7 +3,7 @@ const router = express.Router()
 const { UserModel } = require('../db/schema')
 
 
-
+//dispay user list 
 router.get('/', async (request, response) => {
   // Try catch blocks allow us to catch potential error messages
   try {
@@ -16,6 +16,27 @@ router.get('/', async (request, response) => {
   }
 })
 
+router.get("/:id", async(request, response) => {
+  try{
+    const user = await UserModel.findById(request.params.id)
+    response.json(user)
+  }
+  catch(error) {
+    response.send(error)
+  }
+})
+
+//make new user
+router.post("/", async (request, respoinse) => {
+  try{
+    const newUser = new UserModel(request.body.user)
+    const saved = await newUser.save()
+    response.json(saved)
+  }
+  catch (error) {
+    response.send(error)
+  }
+})
+
 
 module.exports = router
-

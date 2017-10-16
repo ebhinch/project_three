@@ -19,7 +19,7 @@ class UserDetailPage extends Component {
                 <h2>Account Details:</h2>
                 <h3>Name: </h3>
                 <h3>Username: </h3>
-                <h3>Season Visiting: </h3>
+                <h3>Season Visiting: {this.state.user.season}</h3>
                 <h3>Hometown: </h3>
                 <br /> <br />
                 <h4>Edit Account Details</h4>
@@ -32,5 +32,3 @@ class UserDetailPage extends Component {
 }
 
 export default UserDetailPage;
-
-<p> <Link to="/users">Users</Link></p>
