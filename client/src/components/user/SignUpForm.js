@@ -89,6 +89,7 @@ class SignUpForm extends Component {
                     </div>
 
                 </form>
+             
             </div>
 
         )

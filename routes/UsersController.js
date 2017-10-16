@@ -16,21 +16,21 @@ router.get('/', async (request, response) => {
   }
 })
 
-//disolay individual user
-router.get("/:id", async(request, response) => {
-  try{
+//display individual user
+router.get("/:id", async (request, response) => {
+  try {
     console.log(request.params.id)
     const user = await UserModel.findById(request.params.id)
     response.json(user)
   }
-  catch(error) {
+  catch (error) {
     response.send(error)
   }
 })
 
 //make new user
 router.post("/", async (request, response) => {
-  try{
+  try {
     const newUser = new UserModel(request.body.user)
     const saved = await newUser.save()
     response.json(saved)
@@ -40,13 +40,31 @@ router.post("/", async (request, response) => {
   }
 })
 
-//delete user
-router.delete("/:userId", async(request, response) => {
+//update user
+router.patch("/:userId", async(request, response) => {
   try{
+    const updatedUser = request.body.user
+    const user = await UserModel.findById(request.params.userId)
+    user.name = updatedUser.name
+    user.userName = updatedUser.userName
+    user.hometown = updatedUser.hometown
+    user.season = updatedUser.season
+    console.log(updatedUser)
+    console.log(user)
+    const saved = await user.save()
+    response.json(saved)
+  } catch(error) {
+  response.send(error)
+}
+})
+
+//delete user
+router.delete("/:userId", async (request, response) => {
+  try {
     const user = await UserModel.findById(request.params.userId).remove()
     const users = await UserModel.find({})
     response.send(users)
-  } catch(error) {
+  } catch (error) {
     response.send(error)
   }
 })
