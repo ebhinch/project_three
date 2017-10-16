@@ -28,7 +28,6 @@ class UserPage extends Component {
     render() {
         return (
             <div>
-                <h1>Hello from UserPage</h1>
 
                 <h3>To best personalize your trip to Charlottesville's Monticello Wine Trail, either create an account or log into an existing one below.</h3>
                 <h4>Existing Accounts:</h4>

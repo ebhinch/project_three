@@ -9,10 +9,9 @@ const { VineyardModel } = require('../db/schema')
       const vineyards = await VineyardModel.find({})
       // Send JSON of all users
       response.json(vineyards)
-    } catch (err) {
-      response.send(err)
+    } catch (error) {
+      response.send(error)
     }
   })
 
 module.exports = router
-

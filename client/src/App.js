@@ -9,7 +9,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 // Import your own components after imports from node_modules
 import HomePage from "./components/home/HomePage.js"
 import UserPage from "./components/user/UserPage.js"
-import UserDetailPage from "./components/user/UserDetailPage.js"
+import IndividualUserPage from "./components/user/IndividualUserPage.js"
+// import UserDetailPage from "./components/user/UserDetailPage.js"
 import VineyardPage from "./components/vineyard/VineyardPage.js"
 import NavBar from "./components/NavBar.js"
 import Footer from "./components/Footer.js"
@@ -32,7 +33,8 @@ class App extends Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/users" component={UserPage} />
             <Route exact path="/vineyards" component={VineyardPage} />
-            <Route exact path="/users/:userId" component={UserDetailPage} />
+            <Route exact path="/users/:userId" component={IndividualUserPage} />
+            {/* <Route exact path="/users/:userId" component={UserDetailPage} /> */}
             <Route exact path="/contact" component={ContactPage} />
           </Switch>
           <Footer />

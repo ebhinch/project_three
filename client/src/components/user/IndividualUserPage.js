@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom'
 import EditForm from "./EditForm.js"
 
-
-class UserDetailPage extends Component {
+class IndividualUserPage extends Component {
+// class UserDetailPage extends Component {
     state = {
         user: {
             userName: "",
@@ -49,7 +49,7 @@ class UserDetailPage extends Component {
         const response = await axios.patch(`/api/users/${userId}`, {
             user: clonedUser
         })
-        this.setState({ user: response.data})
+        this.setState({ user: response.data })
     }
 
     toggleEdit = () => {
@@ -80,7 +80,7 @@ class UserDetailPage extends Component {
         else {
             return (
                 <div>
-                    <EditForm user={this.state.user} updateUser={this.updateUser} userId={this.props.match.params.userId} showUser={this.showUser} toggleEdit={this.toggleEdit}/>
+                    <EditForm user={this.state.user} updateUser={this.updateUser} userId={this.props.match.params.userId} showUser={this.showUser} toggleEdit={this.toggleEdit} />
                     <p><button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button></p>
                     <p><Link to="/users">Not your account? Return to the User Directory</Link></p>
                 </div>
@@ -88,25 +88,10 @@ class UserDetailPage extends Component {
         }
 
 
-        // return (
-        //     <div>
-        //         <h1>Hello from UserDetailPage</h1>
-        //         <h2>Account Details:</h2>
-        //         <div>
-        //             <h3>Name: {this.state.user.name}</h3>
-        //             <h3>Username: {this.state.user.userName} </h3>
-        //             <h3>Season Visiting: {this.state.user.season}</h3>
-        //             <h3>Hometown:{this.state.user.hometown}</h3>
-        //         </div>
-        //         <br /> <br />
-        // //         <p><Link to="">Edit Account Details</Link></p>
-        // <p><button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button></p>
-        //     <p><Link to="/users">Not your account? Return to the User Directory</Link></p>
-        // //     </div>
-        // // );
     }
 }
 
 
-export default UserDetailPage;
+export default IndividualUserPage;
+// export default UserDetailPage;
 
