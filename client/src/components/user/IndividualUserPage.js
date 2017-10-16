@@ -6,7 +6,6 @@ import { Redirect } from 'react-router-dom'
 import EditForm from "./EditForm.js"
 
 class IndividualUserPage extends Component {
-// class UserDetailPage extends Component {
     state = {
         user: {
             userName: "",
@@ -65,6 +64,7 @@ class IndividualUserPage extends Component {
         if (!this.state.editUserDetails) {
             return (
                 <div>
+                    <h2>{this.state.user.name}'s Account Page</h2>
                     <h3>Name: {this.state.user.name}</h3>
                     <h3>Username: {this.state.user.userName} </h3>
                     <h3>Season Visiting: {this.state.user.season}</h3>
@@ -93,5 +93,4 @@ class IndividualUserPage extends Component {
 
 
 export default IndividualUserPage;
-// export default UserDetailPage;
 
