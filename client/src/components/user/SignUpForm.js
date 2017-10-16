@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import axios from 'axios'
+
 
 class SignUpForm extends Component {
     state = {
@@ -24,6 +25,7 @@ class SignUpForm extends Component {
     handleSubmit = async (event) => {
         //stop the form from reloading the page
         event.preventDefault()
+        // console.log("submitting" + event)
         //create new user & post to API
         const response = await axios.post("/api/users", {
             "user": this.state.newUser

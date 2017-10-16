@@ -16,8 +16,10 @@ router.get('/', async (request, response) => {
   }
 })
 
+//disolay individual user
 router.get("/:id", async(request, response) => {
   try{
+    console.log(request.params.id)
     const user = await UserModel.findById(request.params.id)
     response.json(user)
   }
@@ -27,7 +29,7 @@ router.get("/:id", async(request, response) => {
 })
 
 //make new user
-router.post("/", async (request, respoinse) => {
+router.post("/", async (request, response) => {
   try{
     const newUser = new UserModel(request.body.user)
     const saved = await newUser.save()

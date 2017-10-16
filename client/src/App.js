@@ -4,7 +4,7 @@ import './App.css';
 
 // Rename BrowserRouter to Router
 // Switch guarantees that we won't accidentally show multiple Routes at once
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 // Import your own components after imports from node_modules
 import HomePage from "./components/home/HomePage.js"
@@ -14,6 +14,7 @@ import VineyardPage from "./components/vineyard/VineyardPage.js"
 import NavBar from "./components/NavBar.js"
 import Footer from "./components/Footer.js"
 import ContactPage from "./components/contact/ContactPage.js"
+import styled from "styled-components"
 
 class App extends Component {
   render() {
