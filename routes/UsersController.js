@@ -40,5 +40,16 @@ router.post("/", async (request, response) => {
   }
 })
 
+//delete user
+router.delete("/:userId", async(request, response) => {
+  try{
+    const user = await UserModel.findById(request.params.userId).remove()
+    const users = await UserModel.find({})
+    response.send(users)
+  } catch(error) {
+    response.send(error)
+  }
+})
+
 
 module.exports = router
