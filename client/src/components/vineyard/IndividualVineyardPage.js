@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
+// import WinesList from "./Wines"
 
-class IndividualUserPage extends Component {
+class IndividualVineyardPage extends Component {
     state = {
         vineyard: {
             name: "",
             address: "",
             website: "",
             description: "",
-            wines: []
+            wines: [{_id: '', name: ''}]
         }
     }
 
@@ -34,10 +35,15 @@ class IndividualUserPage extends Component {
                 <h3>ADDRESS: {this.state.vineyard.address}</h3>
                 <h3>WEBSITE: {this.state.vineyard.website}</h3>
                 <h3>DESCRIPTION: {this.state.vineyard.description}</h3>
+                <h3>OUR WINES:</h3>
+                {this.state.vineyard.wines.map(wine => {
+                    return(<div><Link to={`/vineyards/${this.state.vineyard._id}/${wine._id}`}>{wine.name}</Link></div>)
+                })
+                }
 
             </div>
         );
     }
 }
 
-export default IndividualUserPage;
+export default IndividualVineyardPage;

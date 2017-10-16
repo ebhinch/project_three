@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
 mongoose.Promise = global.Promise
 
-const { Vineyard, Wine, User } = require("./schema.js")
+const { VineyardModel, WineModel, UserModel } = require("./schema.js")
 
 const jeffersonMeritage = new WineModel({
     name: "Meritage",
@@ -14,7 +14,7 @@ const jeffersonMeritage = new WineModel({
 })
 
 const kingCrose = new WineModel({
-    name: "",
+    name: "Crose",
     vintage: "NV",
     description: "A dry rosé named after our small town of Crozet. ",
     price: 19,
