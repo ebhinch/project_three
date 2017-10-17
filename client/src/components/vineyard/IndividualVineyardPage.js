@@ -34,7 +34,7 @@ class IndividualVineyardPage extends Component {
     }
 
     toggleShowWines = (wineId) => {
-        console.log("toggling")
+        console.log(wineId )
         this.setState({ showWineDetails: true, currentWineToShow: wineId })
 
     }
