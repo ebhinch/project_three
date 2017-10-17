@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
+import IndividualWineDetails from "./IndividualWineDetails.js"
 // import WinePage from "../wine/WinePage.js"
 // import WinesList from "../wine/WinePage"
 
@@ -17,6 +18,7 @@ class IndividualVineyardPage extends Component {
                 name: ""
             }]
         },
+        currentWineToShow: '',
         showWineDetails: false
     }
 
@@ -31,22 +33,54 @@ class IndividualVineyardPage extends Component {
         console.log(response.data)
     }
 
-    render() {
-        return (
-            <div>              
-                <h2>{this.state.vineyard.name}</h2>
-                <h3>ADDRESS: {this.state.vineyard.address}</h3>
-                <h3>WEBSITE: {this.state.vineyard.website}</h3>
-                <h3>DESCRIPTION: {this.state.vineyard.description}</h3>
-                <h3>OUR WINES:</h3>
-                {this.state.vineyard.wines.map(wine => {
-                    return (<div><Link to={`/vineyards/${this.state.vineyard._id}/${wine._id}`}>{wine.name}</Link></div>)
-                })
-                }
+    toggleShowWines = (wineId) => {
+        this.setState({ showWineDetails: !this.state.showWineDetails, currentWineToShow: wineId })
 
-            </div>
-        );
+    }
+
+    render() {
+        if (!this.state.showWineDetails) {
+            return (
+                <div>
+                    <h2>{this.state.vineyard.name}</h2>
+                    <h3>ADDRESS: {this.state.vineyard.address}</h3>
+                    <h3>WEBSITE: {this.state.vineyard.website}</h3>
+                    <h3>DESCRIPTION: {this.state.vineyard.description}</h3>
+                    <h3>OUR WINES:</h3>
+
+
+                    {this.state.vineyard.wines.map(wine => {
+                        return (<div><h4>{wine.name}</h4><button onClick={() => this.toggleShowWines(wine._id)}>Show {wine.name} Details</button></div>)
+                    })}
+
+
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>
+
+                    <div>
+                        <h2>{this.state.vineyard.name}</h2>
+                        <h3>ADDRESS: {this.state.vineyard.address}</h3>
+                        <h3>WEBSITE: {this.state.vineyard.website}</h3>
+                        <h3>DESCRIPTION: {this.state.vineyard.description}</h3>
+                        <h3>OUR WINES:</h3>
+
+
+                        {this.state.vineyard.wines.map(wine => {
+                            return (<div><h4>{wine.name}</h4><button onClick={() => this.toggleShowWines(wine._id)}>Show {wine.name} Details</button></div>)
+                        })}
+
+
+                    </div>
+
+                    <IndividualWineDetails vineyard={this.state.vineyard} wineId={this.state.currentWineToShow} />
+
+                </div>
+            )
+        }
     }
 }
-
 export default IndividualVineyardPage;
