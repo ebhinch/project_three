@@ -13,10 +13,12 @@ import IndividualUserPage from "./components/user/IndividualUserPage.js"
 import VineyardPage from "./components/vineyard/VineyardPage.js"
 import IndividualVineyardPage from "./components/vineyard/IndividualVineyardPage.js"
 import NavBar from "./components/NavBar.js"
+
 import Footer from "./components/Footer.js"
 import ContactPage from "./components/contact/ContactPage.js"
 import NotePage from "./components/note/NotePage.js"
 import styled from "styled-components"
+
 
 
 class App extends Component {
@@ -30,6 +32,7 @@ class App extends Component {
           <NavBar />
 
           <Switch>
+
             {/* React Router reads routes from the top down and will match the first route it finds */}
             {/* Use exact to guarantee that React Router hits ONLY on path */}
             <Route exact path="/" component={HomePage} />
@@ -40,6 +43,7 @@ class App extends Component {
             <Route exact path="/users/:userId" component={IndividualUserPage} />
             <Route exact path="/contact" component={ContactPage} />
           </Switch>
+     
           <Footer />
         </div>
       </Router>

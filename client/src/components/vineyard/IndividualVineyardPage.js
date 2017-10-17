@@ -3,7 +3,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
 import IndividualWineDetails from "./IndividualWineDetails.js"
-
+import PageBody from "../styled-components/PageBody"
+import { FlexColumn } from "../styled-components/FlexContainers"
+import styled from 'styled-components';
 
 class IndividualVineyardPage extends Component {
     state = {
@@ -46,6 +48,7 @@ class IndividualVineyardPage extends Component {
 
     render() {
             return (
+                <PageBody>
                 <div>
                     <h2>{this.state.vineyard.name}</h2>
                     <h3>ADDRESS: {this.state.vineyard.address}</h3>
@@ -68,6 +71,7 @@ class IndividualVineyardPage extends Component {
                     
 
                 </div>
+                </PageBody>
             )
     }
 }

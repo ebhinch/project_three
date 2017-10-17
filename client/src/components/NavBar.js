@@ -8,15 +8,10 @@ import styled from 'styled-components';
 const HeaderBar = FlexRow.extend `
     font-size: 18px;
     justify-content: space-around;
-    font-family: 'Mouse Memoirs', sans-serif;
+    font-family: 'Carrois Gothic SC', sans-serif;
     width: 100%;
-    
    `
 
-// This is a stateless component
-// It is much simpler than the class syntax because all you have to do is return JSX.
-// Use these components when you don't need to manipulate state or use 
-// lifecycle methods
 
 const NavBar = () => {
     return (
@@ -36,4 +31,5 @@ const NavBar = () => {
 }
 
 export default NavBar
+
 
