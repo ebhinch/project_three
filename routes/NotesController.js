@@ -16,11 +16,11 @@ router.get("/:noteId", async (request, response) => {
 })
 
 router.post("/", async (request, response) => {
-    const newNote = new Note()
-    const user = await User.findById(request.params.userId)
+    const newNote = new NoteModel()
+    const user = await UserModel.findById(request.params.userId)
     user.notes.push(newNote)
     const saved = await user.save()
-    resonse.json(saved)
+    response.json(saved)
 })
 
 router.patch("/:noteId", async (request, response) => {
