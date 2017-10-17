@@ -38,7 +38,7 @@ class App extends Component {
             <Route exact path="/vineyards/:vineyardId" component={IndividualVineyardPage} />
             <Route exact path="/users/:userId" component={IndividualUserPage} />
             <Route exact path="/contact" component={ContactPage} />
-            <Route exact path="/vineyards/:vineyardId/:wineId" component={WinePage} />
+            {/* <Route exact path="/vineyards/:vineyardId/wines/:wineId" component={WinePage} /> */}
           </Switch>
           <Footer />
         </div>

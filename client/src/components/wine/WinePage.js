@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 
 
 class WinePage extends Component {
+    componentWillMount(){
+        console.log('mounting')
+    }
 
     render() {
 
@@ -11,6 +14,7 @@ class WinePage extends Component {
         return (
             <div>
                 <h1>hello from winepage</h1>
+                <h1>{this.props.vineyard.name}</h1>
             </div>
         );
     }

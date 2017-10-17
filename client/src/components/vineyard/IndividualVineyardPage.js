@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
-import WinePage from "../wine/WinePage.js"
-// import WinesList from "./Wines"
+// import WinePage from "../wine/WinePage.js"
+// import WinesList from "../wine/WinePage"
 
 class IndividualVineyardPage extends Component {
     state = {
@@ -16,7 +16,8 @@ class IndividualVineyardPage extends Component {
                 _id: "",
                 name: ""
             }]
-        }
+        },
+        showWineDetails: false
     }
 
     componentWillMount() {
@@ -32,7 +33,7 @@ class IndividualVineyardPage extends Component {
 
     render() {
         return (
-            <div>                
+            <div>              
                 <h2>{this.state.vineyard.name}</h2>
                 <h3>ADDRESS: {this.state.vineyard.address}</h3>
                 <h3>WEBSITE: {this.state.vineyard.website}</h3>

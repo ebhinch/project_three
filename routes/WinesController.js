@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const { WineModel, VineyardModel } = require('../db/schema')
+const { WineModel } = require('../db/schema')
+
 
 
 module.exports = router
