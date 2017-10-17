@@ -32,7 +32,7 @@ class IndividualVineyardPage extends Component {
 
     render() {
         return (
-            <div>
+            <div>                
                 <h2>{this.state.vineyard.name}</h2>
                 <h3>ADDRESS: {this.state.vineyard.address}</h3>
                 <h3>WEBSITE: {this.state.vineyard.website}</h3>
