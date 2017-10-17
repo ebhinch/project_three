@@ -3,8 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
 import IndividualWineDetails from "./IndividualWineDetails.js"
-// import WinePage from "../wine/WinePage.js"
-// import WinesList from "../wine/WinePage"
+
 
 class IndividualVineyardPage extends Component {
     state = {
@@ -16,6 +15,11 @@ class IndividualVineyardPage extends Component {
             wines: [{
                 _id: "",
                 name: ""
+            }],
+            restaurants: [{
+                _id: "",
+                name: "",
+                website: ""
             }]
         },
         currentWineToShow: '',
@@ -28,19 +32,19 @@ class IndividualVineyardPage extends Component {
 
     showVineyard = async () => {
         const vineyardId = this.props.match.params.vineyardId
+        console.log(vineyardId)
         const response = await axios.get(`/api/vineyards/${vineyardId}`)
+        console.log(response)
         this.setState({ vineyard: response.data })
-        console.log(response.data)
+ 
     }
 
-    toggleShowWines = (wineId) => {
-        console.log(wineId )
-        this.setState({ showWineDetails: true, currentWineToShow: wineId })
-
+    toggleShowWines = (wine) => {
+        console.log(wine)
+        this.setState({ showWineDetails: true, currentWineToShow: wine })
     }
 
     render() {
-        if (!this.state.showWineDetails) {
             return (
                 <div>
                     <h2>{this.state.vineyard.name}</h2>
@@ -51,37 +55,20 @@ class IndividualVineyardPage extends Component {
 
 
                     {this.state.vineyard.wines.map(wine => {
-                        return (<div><h4>{wine.name}</h4><button onClick={() => this.toggleShowWines(wine._id)}>Show {wine.name} Details</button></div>)
+                        return (<div><h4>{wine.name}</h4><button onClick={() => this.toggleShowWines(wine)}>Show {wine.name} Details</button></div>)
                     })}
 
-
-                </div>
-            );
-        }
-        else {
-            return (
-                <div>
-
-                    <div>
-                        <h2>{this.state.vineyard.name}</h2>
-                        <h3>ADDRESS: {this.state.vineyard.address}</h3>
-                        <h3>WEBSITE: {this.state.vineyard.website}</h3>
-                        <h3>DESCRIPTION: {this.state.vineyard.description}</h3>
-                        <h3>OUR WINES:</h3>
-
-
-                        {this.state.vineyard.wines.map(wine => {
-                            return (<div><h4>{wine.name}</h4><button onClick={() => this.toggleShowWines(wine._id)}>Show {wine.name} Details</button></div>)
-                        })}
-
-
-                    </div>
-
-                    <IndividualWineDetails vineyard={this.state.vineyard} wineId={this.state.currentWineToShow} />
+                    {this.state.vineyard.restaurants.map(restaurant => {
+                        return (<div><h4>{restaurant.name}</h4></div>)
+                    })}
+                    {this.state.showWineDetails 
+                        ? <IndividualWineDetails vineyard={this.state.vineyard} wine={this.state.currentWineToShow} />
+                        : null
+                    }
+                    
 
                 </div>
             )
-        }
     }
 }
 export default IndividualVineyardPage;

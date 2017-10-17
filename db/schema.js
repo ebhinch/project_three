@@ -2,17 +2,6 @@ const mongoose = require("mongoose")
 
 
 //define schema for each model
-// const restaurantSchema = mongoose.Schema({
-//     name: {
-//         type: String,
-//         required: true
-//     },
-//     website: {
-//         type: String,
-//         required: true
-//     }
-
-// })
 
 const wineSchema = mongoose.Schema({
     name: {
@@ -37,6 +26,18 @@ const wineSchema = mongoose.Schema({
     }
 })
 
+const restaurantSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    website: {
+        type: String,
+        required: true
+    }
+
+})
+
 const vineyardSchema = mongoose.Schema({
     name: {
         type: String,
@@ -54,8 +55,8 @@ const vineyardSchema = mongoose.Schema({
         type: String,
         default: "New Winery Description"
     },
-    wines: [wineSchema]
-    // , restaurants: [restaurantSchema]
+    wines: [wineSchema],
+    restaurants: [restaurantSchema]
 })
 
 const noteSchema = mongoose.Schema({
@@ -80,6 +81,7 @@ const userSchema = mongoose.Schema({
 // const RestaurantModel = mongoose.model("Restaurant", restaurantSchema)
 const VineyardModel = mongoose.model("Vineyard", vineyardSchema)
 const WineModel = mongoose.model("Wine", wineSchema)
+const RestaurantModel = mongoose.model("Restaurant", restaurantSchema)
 const UserModel = mongoose.model("User", userSchema)
 const NoteModel = mongoose.model("Note", noteSchema)
 
@@ -88,5 +90,7 @@ module.exports = {
     VineyardModel: VineyardModel,
     WineModel: WineModel,
     UserModel: UserModel,
-    NoteModel: NoteModel
+    NoteModel: NoteModel,
+    RestaurantModel: RestaurantModel
+
 }
