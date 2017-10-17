@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const UsersController = require('./routes/UsersController')
 const VineyardsController = require("./routes/VineyardsController")
+const NotesController = require("./routes/NotesController")
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); 
@@ -26,6 +27,7 @@ app.use(express.static(__dirname + '/client/build/'));
 // Add Controllers after Middleware
 app.use('/api/users', UsersController)
 app.use("/api/vineyards", VineyardsController)
+app.use("/api/users/:userId/notes", NotesController)
 
 app.get('/', (request,response) => {
     response.sendFile(__dirname + '/client/build/index.html')

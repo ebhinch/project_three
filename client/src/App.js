@@ -15,6 +15,7 @@ import IndividualVineyardPage from "./components/vineyard/IndividualVineyardPage
 import NavBar from "./components/NavBar.js"
 import Footer from "./components/Footer.js"
 import ContactPage from "./components/contact/ContactPage.js"
+import NotePage from "./components/note/NotePage.js"
 import styled from "styled-components"
 
 
@@ -33,6 +34,7 @@ class App extends Component {
             {/* Use exact to guarantee that React Router hits ONLY on path */}
             <Route exact path="/" component={HomePage} />
             <Route exact path="/users" component={UserPage} />
+            <Route exact path="/users/:userId/notes" component={NotePage} />
             <Route exact path="/vineyards" component={VineyardPage} />
             <Route exact path="/vineyards/:vineyardId" component={IndividualVineyardPage} />
             <Route exact path="/users/:userId" component={IndividualUserPage} />

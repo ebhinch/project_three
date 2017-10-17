@@ -11,7 +11,8 @@ class IndividualUserPage extends Component {
             userName: "",
             name: "",
             hometown: "",
-            season: ""
+            season: "",
+            notes:[]
         },
         redirectToUserList: false,
         editUserDetails: false

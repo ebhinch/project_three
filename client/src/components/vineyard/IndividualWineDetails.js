@@ -21,7 +21,6 @@ class IndividualWineDetails extends Component {
         this.findWine()
     }
 
-
     findWine = () => {
         console.log('finding wine!')
         const wine = this.props.vineyard.wines.find((wine) => {

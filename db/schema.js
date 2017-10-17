@@ -58,21 +58,35 @@ const vineyardSchema = mongoose.Schema({
     // , restaurants: [restaurantSchema]
 })
 
+const noteSchema = mongoose.Schema({
+    title: {
+        type: String,
+        default: "New Note Title"
+    },
+    text: {
+        type: String,
+        default: "New Note Text"
+    }
+})
+
 const userSchema = mongoose.Schema({
     userName: String,
     name: String,
     hometown: String,
-    season: String
+    season: String,
+    notes: [noteSchema]
 })
 
 // const RestaurantModel = mongoose.model("Restaurant", restaurantSchema)
 const VineyardModel = mongoose.model("Vineyard", vineyardSchema)
 const WineModel = mongoose.model("Wine", wineSchema)
 const UserModel = mongoose.model("User", userSchema)
+const NoteModel = mongoose.model("Note", noteSchema)
 
 module.exports = {
     // RestaurantModel: RestaurantModel,
     VineyardModel: VineyardModel,
     WineModel: WineModel,
-    UserModel: UserModel
+    UserModel: UserModel,
+    NoteModel: NoteModel
 }

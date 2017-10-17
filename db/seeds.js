@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
 mongoose.Promise = global.Promise
 
-const { VineyardModel, WineModel, UserModel } = require("./schema.js")
+const { VineyardModel, WineModel, UserModel, NoteModel } = require("./schema.js")
 
 const jeffersonMeritage = new WineModel({
     name: "Meritage",
@@ -115,25 +115,44 @@ const king = new VineyardModel({
     wines: [kingCrose, kingRoseland]
 })
 
+const victoriaNoteOne = new NoteModel({
+    title: "Victoria's First Note",
+    text: "Let's go to King Family on our trip!"
+})
+
+const skylarNoteOne = new NoteModel({
+    title: "Skylar's First Note",
+    text: "Let's go to Afton!"
+})
+
+
+const hunterNoteOne = new NoteModel({
+    title: "Hunter's First Wine",
+    text: "We should make dinner reservations"
+})
+
 const victoria = new UserModel({
     userName: "vicky.t",
     name: "Victoria",
     hometown: "Atlanta",
-    season: "Spring 2018"
+    season: "Spring 2018",
+    notes: [victoriaNoteOne]
 })
 
 const skylar = new UserModel({
     userName: "skyguy",
     name: "Skylar",
     hometown: "Asheville",
-    season: "Winter 2017"
+    season: "Winter 2017",
+    notes: [skylarNoteOne]
 })
 
 const hunter = new UserModel({
     userName: "the.mad.duke",
     name: "Hunter",
     hometown: "Decatur",
-    season: "Fall 2018"
+    season: "Fall 2018",
+    notes: [hunterNoteOne]
 })
 
 UserModel.remove({})
