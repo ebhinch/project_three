@@ -60,6 +60,29 @@ const veritasMousseux = new WineModel({
     image: "http://www.veritaswines.com/wp-content/uploads/2015/10/veritas-mousseux-NV_WebSmall.png"
 })
 
+const earlyVidal = new WineModel({
+    name: "Vidal Young Wine",
+    vintage: "2016",
+    description: "Petit Manseng that's imminently affordable and fun",
+    price: 22,
+    image: "https://store.earlymountain.com/assets/images/products/pictures/YoungWine-WhiteBottleOutline.png"
+})
+
+const earlyNovum = new WineModel({
+    name: "Novum",
+    vintage: "2014",
+    description: "Novum continues to be an exercise in Cabernet Franc, so it is this variety from EMV Block 10 that drives the aromas and flavor, and in 2014 we bring in a bit of Tannat for backbone and the flavors of darkness.",
+    price: 38,
+    image: "https://store.earlymountain.com/assets/images/products/pictures/Novum.png"
+})
+
+const earlyMountain = new VineyardModel({
+    name: "Early Mountain Vineyards",
+    address: "6109 Wolftown-Hood Road, Madison, VA 22727",
+    description: "Nestled at the foothills of the majestic Blue Ridge Mountains in Madison County, Virginia.",
+    wines: [earlyNovum, earlyVidal]
+})
+
 const jefferson = new VineyardModel({
     name: "Jefferson Vineyards",
     address: "1353 Thomas Jefferson Parkway Charlottesville, Virginia 22902",
@@ -124,6 +147,8 @@ VineyardModel.remove({})
     .then(() => afton.save())
     .then(() => jefferson.save())
     .then(() => veritas.save())
+    .then(() => earlyMountain.save())
     .then(() => console.log("Successful Saved Vineyards"))
     .then(() => mongoose.connection.close())
+
 

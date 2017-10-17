@@ -19,6 +19,7 @@ class IndividualWineDetails extends Component {
 
     componentWillReceiveProps() {
         this.findWine()
+        console.log("component receiving props!")
     }
 
 
