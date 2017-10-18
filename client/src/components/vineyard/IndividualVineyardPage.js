@@ -12,7 +12,6 @@ import styled from 'styled-components';
 const WineList = FlexRow.extend`
     align-items: space-between;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 
 
 `
@@ -60,14 +59,12 @@ class IndividualVineyardPage extends Component {
         return (
             <PageBody>
                 <PageParagraphText>
-                    <h2>{this.state.vineyard.name}</h2>
+                    <h2><a href={this.state.vineyard.website}>{this.state.vineyard.name}</a></h2>
                     <h3>ADDRESS: {this.state.vineyard.address}</h3>
-                    <h3>WEBSITE: {this.state.vineyard.website}</h3>
                     <h3>DESCRIPTION: {this.state.vineyard.description}</h3>
                     <h3>RESTUARANTS SERVING OUR WINES: {this.state.vineyard.restaurants.map(restaurant => {return (<div><h4>{restaurant.name}</h4></div>)
                     })}
                     </h3>
-
                     <h3>OUR WINES:</h3>
 
 
