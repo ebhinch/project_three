@@ -3,35 +3,25 @@ import PageBody from "../styled-components/PageBody"
 import { FlexRow } from "../styled-components/FlexContainers"
 import { FlexColumn } from "../styled-components/FlexContainers"
 import styled from 'styled-components';
-import winemap from "./winemap.png"
+import winemap from "./winemap.jpg"
 // let Img = require('react-image')
 const WelcomeText = styled.div`
-  font-family: 'Carrois Gothic SC', sans-serif;
-  // font-size: 40px;
-  font-size: 3em;
+font-size: 3em;
   text-align: center;
-  margin-top: 10px;
-  padding-top: 3%;
   font-weight: 900;
-  // text-shadow: .5px .5px grey;
-  
 `
 
 const WelcomeParagraph = styled.div`
-  font-family: 'Carrois Gothic SC', sans-serif;
-  font-weight: 900;
-  padding-left: 15%;
-  padding-right: 15%;
-  padding-top: 2%;
-  // text-shadow: .5px .5px grey;
-  // font-size: 1.5em;
-  // font-size: 18px;
 
+  font-weight: 900;
+  font-size: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 25px;
 `
 
 const HomeBackground = styled.div`
   background-image: url(${winemap});
-  opacity: .5;
   width: 100%;
   background-size: cover;
   background-position: center;

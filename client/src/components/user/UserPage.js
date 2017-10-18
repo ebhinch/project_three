@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 import SignUpForm from "./SignUpForm.js"
 import PageBody from "../styled-components/PageBody"
+import PageParagraphText from "../styled-components/PageParagraphText"
+import DetailHeader from "../styled-components/DetailHeader";
 import styled from 'styled-components';
 
 class UserPage extends Component {
@@ -31,7 +33,8 @@ class UserPage extends Component {
         return (
             <PageBody>
             <div>
-
+                <DetailHeader>Charlottesvino's Registered User Accounts</DetailHeader>
+                <PageParagraphText>
                 <h3>To best personalize your trip to Charlottesville's Monticello Wine Trail, either create an account or log into an existing one below.</h3>
                 <h4>Existing Accounts:</h4>
                 <h4>Please click through to edit or delete an existing account</h4>
@@ -39,7 +42,7 @@ class UserPage extends Component {
                 {this.state.users.map(user => {
                     return (<div><Link key={user._id} to={`/users/${user._id}`}>{user.userName}</Link></div>)
                 })}
-
+</PageParagraphText>
                 <h4>Don't already have an account? Create one below:</h4>
                 <SignUpForm />
             </div>

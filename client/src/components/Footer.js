@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 
 const FooterBar = FlexRow.extend`
-  font-size: 14px;
+  font-size: 18px;
   justify-content: space-around;
   font-family: 'Carrois Gothic SC', sans-serif;
   width: 100%;

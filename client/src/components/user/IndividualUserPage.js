@@ -53,14 +53,14 @@ class IndividualUserPage extends Component {
     }
 
 
-    showNotes = () => {
-        const { userId } = this.props.match.params
-        const response = axios.get(`/api/users/${userId}/notes`)
-        this.toggleShowNotes;
+    // showNotes = () => {
+    //     const { userId } = this.props.match.params
+    //     const response = axios.get(`/api/users/${userId}/notes`)
+    //     this.toggleShowNotes;
 
-        console.log(response)
-        this.setState({ notes: response.data, redirectToNotes: true })
-    }
+    //     console.log(response)
+    //     this.setState({ notes: response.data, redirectToNotes: true })
+    // }
 
 
     toggleEdit = () => {

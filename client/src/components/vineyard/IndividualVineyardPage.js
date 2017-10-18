@@ -6,7 +6,10 @@ import IndividualWineDetails from "./IndividualWineDetails.js"
 import { FlexRow } from "../styled-components/FlexContainers"
 import { FlexColumn } from "../styled-components/FlexContainers"
 import PageBody from "../styled-components/PageBody"
-import PageParagraphText from "../styled-components/PageParagraphText"
+import PageParagraphText from "../styled-components/PageParagraphText";
+import DetailHeader from "../styled-components/DetailHeader";
+import DetailText from "../styled-components/DetailText"
+import PageTitle from "../styled-components/PageTitle.js"
 import styled from 'styled-components';
 
 const WineList = FlexRow.extend`
@@ -16,29 +19,12 @@ const WineList = FlexRow.extend`
     margin-bottom: 2px;
 `
 
-const DetailHeader = styled.h3`
-    font-size: 18px;
-    font-weight: bolder;
-    margin: 5px;
-    align-items: center;
-`
-
-const DetailText = styled.h4`
-    font-size: 16px;
-    font-family: 'Puritan', sans-serif;    
-`
-
-const CenterText = styled.div`
-    text-align: center;
-`
-
 const WineDetailNameAndButton = FlexColumn.extend`
-align-items: center;
-margin-top: 2px;
-flex-wrap: wrap;
-justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 `
-
 class IndividualVineyardPage extends Component {
     state = {
         vineyard: {
@@ -82,24 +68,26 @@ class IndividualVineyardPage extends Component {
         return (
             <PageBody>
                 <PageParagraphText>
-                    <CenterText><h2><a href={this.state.vineyard.website}>{this.state.vineyard.name}</a></h2></CenterText>
+                    <PageTitle><a href={this.state.vineyard.website}>{this.state.vineyard.name}</a></PageTitle>
+
                     <DetailHeader>Description: </DetailHeader>
                     <DetailText>{this.state.vineyard.description}</DetailText>
+
                     <DetailHeader>Address: </DetailHeader><DetailText>{this.state.vineyard.address}</DetailText>
 
                     <div>
-                        <DetailHeader>
-                            Restaurants Serving Our Wines:
-                        </DetailHeader> {this.state.vineyard.restaurants.map(restaurant => {
+                        <DetailHeader> Restaurants Serving Our Wines:</DetailHeader> {this.state.vineyard.restaurants.map(restaurant => {
                             return (
-                                <div>
-                                    <DetailText>{restaurant.name}</DetailText>
-                                </div>)
-                        })}
+                                <DetailText>{restaurant.name}</DetailText>
+                            )
+                        })
+                        }
                     </div>
+
                     <br />
 
-                    <DetailHeader><CenterText>OUR WINES:</CenterText></DetailHeader>
+                    <DetailHeader>OUR WINES:</DetailHeader>
+                    <br />
                     <WineList>{this.state.vineyard.wines.map(wine => {
                         return (
                             <div>
