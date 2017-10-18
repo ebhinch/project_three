@@ -7,11 +7,15 @@ import styled from 'styled-components';
 
 const WineDetails = styled.div`
     text-align: center;
+    img {
+        height: 300px;
+    }
 `
 
 const IndividualWineDetails = (props) => {
 
     return (
+        <PageBody>
         <WineDetails>
             <br />
             <h4>Name: {props.wine.name}</h4>
@@ -20,6 +24,7 @@ const IndividualWineDetails = (props) => {
             <h4>Price: ${props.wine.price}</h4>
             <img src={props.wine.image} />
         </WineDetails>
+        </PageBody>
     );
 }
 

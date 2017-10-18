@@ -10,7 +10,15 @@ const HeaderBar = FlexRow.extend `
     justify-content: space-around;
     font-family: 'Carrois Gothic SC', sans-serif;
     width: 100%;
+    position: absolute;
     box-shadow: 2px 2px 1px grey;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 40px;
+    margin-top: 0;
+    padding-top: 0;
+
    `
 
 

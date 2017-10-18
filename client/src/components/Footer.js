@@ -15,7 +15,6 @@ const FooterBar = FlexRow.extend`
   right: 0;
   left: 0;
   height: 40px;
-  background-color: white;
   `
 
 const Footer = () => {

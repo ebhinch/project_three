@@ -24,7 +24,6 @@ const DetailHeader = styled.h3`
 `
 
 const DetailText = styled.h4`
-    margin-left: 10px;
     font-size: 16px;
     font-family: 'Puritan', sans-serif;    
 `
@@ -33,8 +32,8 @@ const CenterText = styled.div`
     text-align: center;
 `
 
-const DetailButton= FlexRow.extend`
-align-items: space-between;
+const WineDetailNameAndButton = FlexColumn.extend`
+align-items: center;
 margin-top: 2px;
 flex-wrap: wrap;
 justify-content: space-evenly;
@@ -104,20 +103,20 @@ class IndividualVineyardPage extends Component {
                     <WineList>{this.state.vineyard.wines.map(wine => {
                         return (
                             <div>
-                                <DetailText>{wine.name}</DetailText>
-                                <DetailButton>
+                                <WineDetailNameAndButton>
+                                    <DetailText>{wine.name}</DetailText>
                                     <button onClick={() => this.toggleShowWines(wine)}>
-                                    Show {wine.name} Details
+                                        Show {wine.name} Details
                                      </button>
-                                </DetailButton>
+                                </WineDetailNameAndButton>
                             </div>)
                     })}
                     </WineList>
-                        {this.state.showWineDetails
-                            ? <div><IndividualWineDetails vineyard={this.state.vineyard} wine={this.state.currentWineToShow}></IndividualWineDetails></div> 
-                            : null
-                        }
-                    
+                    {this.state.showWineDetails
+                        ? <div><IndividualWineDetails vineyard={this.state.vineyard} wine={this.state.currentWineToShow}></IndividualWineDetails></div>
+                        : null
+                    }
+
 
 
 
