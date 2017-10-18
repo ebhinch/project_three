@@ -4,24 +4,32 @@ import { FlexRow } from "../styled-components/FlexContainers"
 import { FlexColumn } from "../styled-components/FlexContainers"
 import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
-import winemap from "./winemap.jpg"
-// let Img = require('react-image')
+import winemap from "./winemap.jpg";
+import { Redirect } from 'react-router-dom';
 
 
-
-const WelcomeText = styled.div`
-font-size: 3em;
+const WelcomeText = FlexRow.extend`
+  color: #0f5e75;
+  margin-top: 35px;
+  z-index: 3;
+  font-size: 3em;
   text-align: center;
   font-weight: 900;
+  align-items: center;
+  justify-content: center;
+  text-shadow: .5px 1px #9896a4;
+  font-family: 'Lato', sans-serif;
 `
 
 const WelcomeParagraph = styled.div`
-
+  color: #0f5e75;
+  z-index: 3;
   font-weight: 900;
   font-size: 20px;
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 25px;
+  text-shadow: .5px 1px #9896a4;
 `
 
 const HomeBackground = styled.div`
@@ -33,7 +41,7 @@ const HomeBackground = styled.div`
 `
 
 const HomePageStyled = styled.div`
-  font-family: 'Puritan', sans-serif;
+  font-family: 'Lato', sans-serif;
   margin-top: 10px;
   margin-left: 10%;
   margin-right: 10%;
@@ -54,9 +62,11 @@ class HomePage extends Component {
           {/* <img src={winemap} alt="wine map" /> */}
 
           <HomePageStyled>
-            <WelcomeText><ShadowDiv>Welcome to Charlottesvino</ShadowDiv></WelcomeText>
+            <WelcomeText>welcome to charlottesvino</WelcomeText>
             <br />
             <WelcomeParagraph>Time to get excited about planning your trip along Charlottesville's Monticello Wine Trail! Whether you're traveling from across the country or you're local, Charlottesvino makes planning easier, so you'll have more time for enjoying the region's beautiful wineries.</WelcomeParagraph>
+
+      
 
             {/* <img src={winemap} alt="wine map" /> */}
 

@@ -17,7 +17,6 @@ const WineDetails = FlexColumn.extend`
 const IndividualWineDetails = (props) => {
 
     return (
-        <PageBody>
             <WineDetails>
                 <br />
                 <ShadowDiv>
@@ -30,7 +29,6 @@ const IndividualWineDetails = (props) => {
                     <img src={props.wine.image} />
                 </ShadowDiv>
             </WineDetails>
-        </PageBody>
     );
 }
 

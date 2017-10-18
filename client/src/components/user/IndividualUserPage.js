@@ -92,12 +92,12 @@ class IndividualUserPage extends Component {
                 <DetailHeader>{this.state.user.name}'s Account Page</DetailHeader>
 
                 <p>
-                    <button onClick={this.toggleShowNotes}>{this.state.user.name}'s Notes</button>
+                    <button onClick={this.toggleShowNotes}> View Your Note Board</button>
                 </p>
 
-                <p>
+                {/* <p>
                     <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
-                </p>
+                </p> */}
 
                 <p>
                     <Link to="/users">Return to the User Directory</Link>
@@ -105,7 +105,8 @@ class IndividualUserPage extends Component {
 
                 {this.state.editUserDetails ? <div>
                     <EditForm user={this.state.user} updateUser={this.updateUser} userId={this.props.match.params.userId} showUser={this.showUser} toggleEdit={this.toggleEdit} />
-                    <button onClick={this.toggleEdit}>Edit Account Details</button>
+                    <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
+
 
                 </div> : <div>
                         <h3>Name: {this.state.user.name}</h3>

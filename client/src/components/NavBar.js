@@ -11,10 +11,11 @@ const HeaderBar = FlexRow.extend `
     font-family: 'Carrois Gothic SC', sans-serif;
     width: 100%;
     box-shadow: 2px 2px 1px grey;
- 
-
+    a:hover {
+        font-weight: 900;
+        color:green;
+    }
    `
-
 
 const NavBar = () => {
     return (

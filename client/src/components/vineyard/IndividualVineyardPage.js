@@ -17,6 +17,7 @@ const WineList = FlexRow.extend`
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 2px;
+
 `
 
 const WineDetailNameAndButton = FlexColumn.extend`

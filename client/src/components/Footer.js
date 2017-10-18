@@ -15,6 +15,10 @@ const FooterBar = FlexRow.extend`
   right: 0;
   left: 0;
   height: 40px;
+  a:hover {
+    font-weight: 900;
+    color:green;
+}
   `
 
 const Footer = () => {
