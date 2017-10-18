@@ -6,17 +6,17 @@ import styled from 'styled-components';
 
 
 const FooterBar = FlexRow.extend`
-    font-size: 18px;
-    justify-content: space-around;
-    font-family: 'Carrois Gothic SC', sans-serif;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 40px;
-    background-color: orange;
-    `
+  font-size: 14px;
+  justify-content: space-around;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 40px;
+  background-color: white;
+  `
 
 const Footer = () => {
   return (
