@@ -12,6 +12,7 @@ import styled from 'styled-components';
 
 
 const WineryPreview = FlexColumn.extend`
+color: #0f5e75;
 align-items: center;
 text-align: center;
 img {
