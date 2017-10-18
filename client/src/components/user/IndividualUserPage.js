@@ -3,6 +3,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom'
 import EditForm from "./EditForm.js"
+import PageBody from "../styled-components/PageBody"
+import PageParagraphText from "../styled-components/PageParagraphText"
+import DetailHeader from "../styled-components/DetailHeader";
+import { FlexColumn } from "../styled-components/FlexContainers";
+import { FlexRow } from "../styled-components/FlexContainers";
+import styled from 'styled-components';
 
 class IndividualUserPage extends Component {
     state = {
@@ -80,8 +86,10 @@ class IndividualUserPage extends Component {
             return <Redirect to={`/users/${this.props.match.params.userId}/notes`} />
         }
         return (
+            <PageBody>
+                <PageParagraphText>
             <div>
-                <h2>{this.state.user.name}'s Account Page</h2>
+                <DetailHeader>{this.state.user.name}'s Account Page</DetailHeader>
 
                 <p>
                     <button onClick={this.toggleShowNotes}>{this.state.user.name}'s Notes</button>
@@ -109,6 +117,8 @@ class IndividualUserPage extends Component {
                     </div>
                 }
             </div>
+            </PageParagraphText>
+            </PageBody>
         )
     }
 }

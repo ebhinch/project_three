@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import PageBody from "../styled-components/PageBody"
+import DetailHeader from "../styled-components/DetailHeader"
+import PageParagraphText from "../styled-components/PageParagraphText"
+import styled from 'styled-components';
 
 
 class SignUpForm extends Component {
@@ -42,7 +46,6 @@ class SignUpForm extends Component {
 
         return (
             <div>
-                <h1>Create Account</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="userName">User Name: </label>

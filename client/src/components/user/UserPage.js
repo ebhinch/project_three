@@ -5,7 +5,22 @@ import SignUpForm from "./SignUpForm.js"
 import PageBody from "../styled-components/PageBody"
 import PageParagraphText from "../styled-components/PageParagraphText"
 import DetailHeader from "../styled-components/DetailHeader";
+import { FlexColumn } from "../styled-components/FlexContainers";
+import { FlexRow } from "../styled-components/FlexContainers";
 import styled from 'styled-components';
+
+const UserColumnContainer = FlexRow.extend`
+    align-items: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+`
+
+const UserColumn = FlexColumn.extend`
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border: 2px solid black;
+`
 
 class UserPage extends Component {
     // This sets the initial state for the component. 
@@ -32,20 +47,25 @@ class UserPage extends Component {
     render() {
         return (
             <PageBody>
-            <div>
-                <DetailHeader>Charlottesvino's Registered User Accounts</DetailHeader>
                 <PageParagraphText>
-                <h3>To best personalize your trip to Charlottesville's Monticello Wine Trail, either create an account or log into an existing one below.</h3>
-                <h4>Existing Accounts:</h4>
-                <h4>Please click through to edit or delete an existing account</h4>
+                    <DetailHeader>Charlottesvino's Registered User Accounts</DetailHeader>
 
-                {this.state.users.map(user => {
-                    return (<div><Link key={user._id} to={`/users/${user._id}`}>{user.userName}</Link></div>)
-                })}
-</PageParagraphText>
-                <h4>Don't already have an account? Create one below:</h4>
-                <SignUpForm />
-            </div>
+                    <div>To get the most out of Charlottesvino's resources and take advantage of features like our note log, either create an account or log into an existing one.</div>
+                    <UserColumnContainer>
+                        <UserColumn>
+                            <div>Existing Charlottesvino accounts include:</div>
+
+                            {this.state.users.map(user => {
+                                return (<div><Link key={user._id} to={`/users/${user._id}`}>{user.userName}</Link></div>)
+                            })}
+                        </UserColumn>
+                        <br /> <br />
+                        <UserColumn>
+                            <div>Don't already have an account? Create one below:</div>
+                            <SignUpForm />
+                        </UserColumn>
+                    </UserColumnContainer>
+                </PageParagraphText>
             </PageBody>
         );
     }
