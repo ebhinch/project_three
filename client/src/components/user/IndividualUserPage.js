@@ -81,6 +81,10 @@ class IndividualUserPage extends Component {
                 <h2>{this.state.user.name}'s Account Page</h2>
 
                 <p>
+                    <button>{this.state.user.name}'s Notes</button>
+                </p>
+
+                <p>
                     <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
                 </p>
 
