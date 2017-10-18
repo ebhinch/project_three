@@ -76,12 +76,15 @@ class IndividualUserPage extends Component {
         if (this.state.redirectToUserList) {
             return <Redirect to={"/users"} />
         }
+        else if (this.state.redirectToNotes) {
+            return <Redirect to={`/users/${this.props.match.params.userId}/notes`} />
+        }
         return (
             <div>
                 <h2>{this.state.user.name}'s Account Page</h2>
 
                 <p>
-                    <button>{this.state.user.name}'s Notes</button>
+                    <button onClick={this.toggleShowNotes}>{this.state.user.name}'s Notes</button>
                 </p>
 
                 <p>
