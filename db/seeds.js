@@ -109,6 +109,7 @@ const fleurie = new RestaurantModel({
 const earlyMountain = new VineyardModel({
     name: "Early Mountain Vineyards",
     address: "6109 Wolftown-Hood Road, Madison, VA 22727",
+    website: "https://www.earlymountain.com/",
     description: "Nestled at the foothills of the majestic Blue Ridge Mountains in Madison County, Virginia.",
     wines: [earlyNovum, earlyVidal],
     restaurants: [cAndO, duners]
@@ -135,7 +136,7 @@ const afton = new VineyardModel({
 const veritas = new VineyardModel({
     name: "Veritas",
     address: "151 Veritas Lane Afton, Virginia 22920",
-    website: "www.veritaswines.com",
+    website: "http://www.veritaswines.com",
     description: "Nestled at the base of the Blue Ridge Mountains outside Charlottesville, Veritas Vineyards & Winery is best known for its delicious Virginia wine, stunning views and warm hospitality.",
     wines: [veritasClaret, veritasMousseux],
     restaurants: [fleurie, mas]

@@ -8,5 +8,6 @@ const PageBody = styled.div`
    padding-bottom: 40px;
    padding-top: 40px;
 
+
 `
 export default PageBody
