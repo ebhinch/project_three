@@ -6,6 +6,11 @@ import DetailHeader from "../styled-components/DetailHeader"
 import PageParagraphText from "../styled-components/PageParagraphText"
 import styled from 'styled-components';
 
+const ColumnText = styled.div`
+margin-bottom: 15px;
+margin-top: 15px;
+`
+
 
 class SignUpForm extends Component {
     state = {
@@ -47,7 +52,7 @@ class SignUpForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
+                    <ColumnText>
                         <label htmlFor="userName">User Name: </label>
                         <input
                             onChange={this.handleChange}
@@ -55,9 +60,9 @@ class SignUpForm extends Component {
                             type="text"
                             value={this.state.newUser.userName}
                         />
-                    </div>
+                    </ColumnText>
 
-                    <div>
+                    <ColumnText>
                         <label htmlFor="name">Name: </label>
                         <input
                             onChange={this.handleChange}
@@ -65,9 +70,9 @@ class SignUpForm extends Component {
                             type="text"
                             value={this.state.newUser.name}
                         />
-                    </div>
+                    </ColumnText>
 
-                    <div>
+                    <ColumnText>
                         <label htmlFor="hometown">Hometown: </label>
                         <input
                             onChange={this.handleChange}
@@ -75,9 +80,9 @@ class SignUpForm extends Component {
                             type="text"
                             value={this.state.newUser.hometown}
                         />
-                    </div>
+                    </ColumnText>
 
-                    <div>
+                    <ColumnText>
                         <label htmlFor="season">Season Visiting: </label>
                         <input 
                             onChange={this.handleChange}
@@ -85,7 +90,7 @@ class SignUpForm extends Component {
                             type="text"
                             value={this.state.newUser.season}
                         />
-                    </div>
+                    </ColumnText>
 
                     <div>
                         <button>Create Account</button>
