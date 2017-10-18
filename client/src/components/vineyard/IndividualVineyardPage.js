@@ -13,6 +13,31 @@ const WineList = FlexRow.extend`
     align-items: space-between;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom: 2px;
+`
+
+const DetailHeader = styled.h3`
+    font-size: 18px;
+    font-weight: bolder;
+    margin: 5px;
+    align-items: center;
+`
+
+const DetailText = styled.h4`
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: 'Puritan', sans-serif;    
+`
+
+const CenterText = styled.div`
+    text-align: center;
+`
+
+const DetailButton= FlexRow.extend`
+align-items: space-between;
+margin-top: 2px;
+flex-wrap: wrap;
+justify-content: space-evenly;
 `
 
 class IndividualVineyardPage extends Component {
@@ -58,30 +83,41 @@ class IndividualVineyardPage extends Component {
         return (
             <PageBody>
                 <PageParagraphText>
-                    <h2><a href={this.state.vineyard.website}>{this.state.vineyard.name}</a></h2>
-                    <h3>ADDRESS: {this.state.vineyard.address}</h3>
-                    <h3>DESCRIPTION: {this.state.vineyard.description}</h3>
-                    <h3>RESTUARANTS SERVING OUR WINES: {this.state.vineyard.restaurants.map(restaurant => {return (<div><h4>{restaurant.name}</h4></div>)
-                    })}
-                    </h3>
-                    <h3>OUR WINES:</h3>
+                    <CenterText><h2><a href={this.state.vineyard.website}>{this.state.vineyard.name}</a></h2></CenterText>
+                    <DetailHeader>Description: </DetailHeader>
+                    <DetailText>{this.state.vineyard.description}</DetailText>
+                    <DetailHeader>Address: </DetailHeader><DetailText>{this.state.vineyard.address}</DetailText>
 
+                    <div>
+                        <DetailHeader>
+                            Restaurants Serving Our Wines:
+                        </DetailHeader> {this.state.vineyard.restaurants.map(restaurant => {
+                            return (
+                                <div>
+                                    <DetailText>{restaurant.name}</DetailText>
+                                </div>)
+                        })}
+                    </div>
+                    <br />
 
+                    <DetailHeader><CenterText>OUR WINES:</CenterText></DetailHeader>
                     <WineList>{this.state.vineyard.wines.map(wine => {
                         return (
                             <div>
-                                <h4>{wine.name}</h4>
-                                <button onClick={() => this.toggleShowWines(wine)}>
+                                <DetailText>{wine.name}</DetailText>
+                                <DetailButton>
+                                    <button onClick={() => this.toggleShowWines(wine)}>
                                     Show {wine.name} Details
-                            </button>
+                                     </button>
+                                </DetailButton>
                             </div>)
                     })}
-
-                    {this.state.showWineDetails
-                        ? <IndividualWineDetails vineyard={this.state.vineyard} wine={this.state.currentWineToShow} />
-                        : null
-                    }
                     </WineList>
+                        {this.state.showWineDetails
+                            ? <div><IndividualWineDetails vineyard={this.state.vineyard} wine={this.state.currentWineToShow}></IndividualWineDetails></div> 
+                            : null
+                        }
+                    
 
 
 
