@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import PageBody from "../styled-components/PageBody"
+import styled from 'styled-components';
 
 const IndividualWineDetails = (props) => {
 

@@ -5,7 +5,7 @@ import { FlexColumn } from "./styled-components/FlexContainers"
 import styled from 'styled-components';
 
 
-const FooterBar = FlexRow.extend `
+const FooterBar = FlexRow.extend`
     font-size: 18px;
     justify-content: space-around;
     font-family: 'Carrois Gothic SC', sans-serif;
@@ -21,13 +21,13 @@ const FooterBar = FlexRow.extend `
 const Footer = () => {
   return (
     <FooterBar>
-  
-    
-       
-        <p><Link to ="/users">Users</Link></p>
-        <p><Link to ="/vineyards">Winery Directory</Link></p>
-        <p><Link to="/contact">Contact Us</Link></p>
-        
+
+
+
+      <p><Link to="/users">Users</Link></p>
+      <p><Link to="/vineyards">Winery Directory</Link></p>
+      <p><Link to="/contact">Contact Us</Link></p>
+
 
     </FooterBar>
   )

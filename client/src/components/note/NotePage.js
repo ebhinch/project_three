@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios"
 import NotesList from "./NotesList"
+import PageBody from "../styled-components/PageBody"
+import styled from 'styled-components';
 
 
 class NotePage extends Component {
@@ -77,6 +79,7 @@ class NotePage extends Component {
 
         render() {
             return (
+                <PageBody>
                 <div>
                     <h1>{this.state.user.name}'s Notes</h1>
                     <button onClick={this.createNewNote}>Write New Note</button>
@@ -89,6 +92,7 @@ class NotePage extends Component {
                     />
 
                 </div>
+                </PageBody>
             )
         }
     }

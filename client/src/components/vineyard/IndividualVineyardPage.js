@@ -3,8 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
 import IndividualWineDetails from "./IndividualWineDetails.js"
-import PageBody from "../styled-components/PageBody"
 import { FlexColumn } from "../styled-components/FlexContainers"
+import PageBody from "../styled-components/PageBody"
 import styled from 'styled-components';
 
 class IndividualVineyardPage extends Component {

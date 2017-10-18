@@ -6,10 +6,11 @@ import { FlexColumn } from "./styled-components/FlexContainers"
 import styled from 'styled-components';
 
 const HeaderBar = FlexRow.extend `
-    font-size: 18px;
+    font-size: 14px;
     justify-content: space-around;
     font-family: 'Carrois Gothic SC', sans-serif;
     width: 100%;
+    box-shadow: 2px 2px 1px grey;
    `
 
 
