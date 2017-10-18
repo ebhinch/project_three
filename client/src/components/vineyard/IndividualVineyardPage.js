@@ -12,8 +12,7 @@ import styled from 'styled-components';
 const WineList = FlexRow.extend`
     align-items: space-between;
     flex-wrap: wrap;
-
-
+    justify-content: space-evenly;
 `
 
 class IndividualVineyardPage extends Component {
