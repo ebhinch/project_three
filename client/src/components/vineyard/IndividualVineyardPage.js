@@ -56,7 +56,6 @@ class IndividualVineyardPage extends Component {
         const response = await axios.get(`/api/vineyards/${vineyardId}`)
         console.log(response)
         this.setState({ vineyard: response.data })
-
     }
 
     toggleShowWines = (wine) => {

@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 import PageBody from "../styled-components/PageBody"
 import { FlexRow } from "../styled-components/FlexContainers"
 import { FlexColumn } from "../styled-components/FlexContainers"
+import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
 import winemap from "./winemap.jpg"
 // let Img = require('react-image')
+
+
+
 const WelcomeText = styled.div`
 font-size: 3em;
   text-align: center;
@@ -50,7 +54,7 @@ class HomePage extends Component {
           {/* <img src={winemap} alt="wine map" /> */}
 
           <HomePageStyled>
-            <WelcomeText>Welcome to Charlottesvino</WelcomeText>
+            <WelcomeText><ShadowDiv>Welcome to Charlottesvino</ShadowDiv></WelcomeText>
             <br />
             <WelcomeParagraph>Time to get excited about planning your trip along Charlottesville's Monticello Wine Trail! Whether you're traveling from across the country or you're local, Charlottesvino makes planning easier, so you'll have more time for enjoying the region's beautiful wineries.</WelcomeParagraph>
 

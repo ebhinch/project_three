@@ -100,7 +100,7 @@ class IndividualUserPage extends Component {
                 </p>
 
                 <p>
-                    <Link to="/users">Not your account? Return to the User Directory</Link>
+                    <Link to="/users">Return to the User Directory</Link>
                 </p>
 
                 {this.state.editUserDetails ? <div>

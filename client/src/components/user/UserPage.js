@@ -7,20 +7,36 @@ import PageParagraphText from "../styled-components/PageParagraphText"
 import DetailHeader from "../styled-components/DetailHeader";
 import { FlexColumn } from "../styled-components/FlexContainers";
 import { FlexRow } from "../styled-components/FlexContainers";
+import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
 
 const UserColumnContainer = FlexRow.extend`
     align-items: space-between;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    height: 400px;
 `
 
-const UserColumn = FlexColumn.extend`
+const UserColumn = ShadowDiv.extend`
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
-    border: 2px solid black;
+    margin-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    min-height: 100%
 `
+
+
+// const UserColumn = FlexColumn.extend`
+//     align-items: center;
+//     flex-wrap: wrap;
+//     justify-content: flex-start;
+//     margin-top: 20px;
+//     padding-right: 10px;
+//     padding-left: 10px;
+//     min-height: 100%
+// `
 
 class UserPage extends Component {
     // This sets the initial state for the component. 
@@ -58,11 +74,13 @@ class UserPage extends Component {
                             {this.state.users.map(user => {
                                 return (<div><Link key={user._id} to={`/users/${user._id}`}>{user.userName}</Link></div>)
                             })}
-                        </UserColumn>
+                      
+                        </UserColumn> 
                         <br /> <br />
                         <UserColumn>
                             <div>Don't already have an account? Create one below:</div>
                             <SignUpForm />
+                       
                         </UserColumn>
                     </UserColumnContainer>
                 </PageParagraphText>
