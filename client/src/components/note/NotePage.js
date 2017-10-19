@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios"
+import { Link } from 'react-router-dom';
 import NotesList from "./NotesList"
 import PageBody from "../styled-components/PageBody"
 import PageParagraphText from "../styled-components/PageParagraphText"
@@ -85,6 +86,7 @@ class NotePage extends Component {
                     <div>
 
                         <h1>{this.state.user.name}'s Notes</h1>
+                        <Link to={"/users"}>Return to Account Directory</Link>
                         <div>To edit an existing note, type directly into the text fields.</div>
 
                         <button onClick={this.createNewNote}>Write New Note</button>
@@ -97,7 +99,6 @@ class NotePage extends Component {
                             deleteNote={this.deleteNote}
                             updateNote={this.updateNote}
                         />
-
                     </div>
                 </PageParagraphText>
             </PageBody>

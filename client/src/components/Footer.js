@@ -23,16 +23,16 @@ const FooterBar = FlexRow.extend`
 
 const Footer = () => {
   return (
+
     <FooterBar>
-
-
-
+      <p><Link to="/">Charlottesvino</Link></p>
       <p><Link to="/users">Users</Link></p>
       <p><Link to="/vineyards">Winery Directory</Link></p>
       <p><Link to="/contact">Contact Us</Link></p>
 
 
     </FooterBar>
+ 
   )
 }
 
