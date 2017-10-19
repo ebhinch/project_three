@@ -108,9 +108,13 @@ class IndividualVineyardPage extends Component {
                             <DetailText>{this.state.vineyard.address}</DetailText></VineyardDiv>
 
                         <VineyardDiv>
-                            <DetailHeader> Restaurants Serving Our Wines:</DetailHeader> {this.state.vineyard.restaurants.map(restaurant => {
+                            <DetailHeader> Restaurants Serving Our Wines:</DetailHeader> 
+                            
+                            {this.state.vineyard.restaurants.map(restaurant => {
                                 return (
-                                    <DetailText>{restaurant.name}</DetailText>
+                                    <div>
+                                    <DetailText><a href={restaurant.website}>{restaurant.name}</a></DetailText>
+                                    </div>
                                 )
                             })
                             }
