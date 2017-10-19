@@ -9,17 +9,20 @@ import { FlexRow } from "../styled-components/FlexContainers";
 import { FlexColumn } from "../styled-components/FlexContainers";
 import ShadowDiv from "../styled-components/ShadowDiv";
 import styled from 'styled-components';
-
+import earlyMountain from "./earlymountain.jpg"
 
 const WineryPreview = FlexColumn.extend`
-color: #0f5e75;
-align-items: center;
-text-align: center;
-img {
-    height: 300px;
-}
+    color: #0f5e75;
+    align-items: center;
+    text-align: center;
+    img {
+        height: 300px;
+    }
 `
 
+const VineyardImage = styled.div`
+    width: 100%;
+`
 
 class VineyardPage extends Component {
     state = {
@@ -43,6 +46,9 @@ class VineyardPage extends Component {
         return (
             <PageBody>
                 <PageParagraphText>
+
+                    <VineyardImage><img src={earlyMountain} alt="picture" /></VineyardImage>
+
                     <DetailHeader>Charlottesvino's Winery Directory</DetailHeader>
                     <div>Time to get excited about planning your trip along Charlottesville's Monticello Wine Trail! Whether you're traveling from across the country (or world!) or you're local, Charlottesvino makes planning easier, so you'll have more time for enjoying our beautiful wineries.</div>
                     <br />
@@ -50,11 +56,11 @@ class VineyardPage extends Component {
                     {this.state.vineyards.map(vineyard => {
                         return (
                             <WineryPreview>
-                            <ShadowDiv>
-                                <Link key={vineyard._id} to={`/vineyards/${vineyard._id}`}>{vineyard.name}
-                                </Link>
-                                <div>{vineyard.description}</div>
-                            </ShadowDiv></WineryPreview>)
+                                <ShadowDiv>
+                                    <Link key={vineyard._id} to={`/vineyards/${vineyard._id}`}>{vineyard.name}
+                                    </Link>
+                                    <div>{vineyard.description}</div>
+                                </ShadowDiv></WineryPreview>)
                     })}
                 </PageParagraphText>
             </PageBody>

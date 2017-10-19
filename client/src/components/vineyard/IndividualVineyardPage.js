@@ -2,22 +2,24 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
-import IndividualWineDetails from "./IndividualWineDetails.js"
-import { FlexRow } from "../styled-components/FlexContainers"
-import { FlexColumn } from "../styled-components/FlexContainers"
-import PageBody from "../styled-components/PageBody"
+import IndividualWineDetails from "./IndividualWineDetails.js";
+import { FlexRow } from "../styled-components/FlexContainers";
+import { FlexColumn } from "../styled-components/FlexContainers";
+import PageBody from "../styled-components/PageBody";
 import PageParagraphText from "../styled-components/PageParagraphText";
 import DetailHeader from "../styled-components/DetailHeader";
-import DetailText from "../styled-components/DetailText"
-import PageTitle from "../styled-components/PageTitle.js"
+import DetailText from "../styled-components/DetailText";
+import PageTitle from "../styled-components/PageTitle.js";
+import ShadowDiv from "../styled-components/ShadowDiv";
 import styled from 'styled-components';
+import jefferson from "./jefferson.jpg"
+import vaVineyard from "./vaVineyard.png"
 
 const WineList = FlexRow.extend`
     align-items: space-between;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 2px;
-
 `
 
 const WineDetailNameAndButton = FlexColumn.extend`
@@ -26,6 +28,30 @@ const WineDetailNameAndButton = FlexColumn.extend`
     flex-wrap: wrap;
     justify-content: space-evenly;
 `
+
+const VineyardSection = FlexColumn.extend`
+    color: #0f5e75;
+    align-items: center;
+    text-align: center;
+    img {
+        width: 50%
+    }
+`
+
+const VineyardDiv = ShadowDiv.extend`
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 60%
+`
+
+const VineyardImage = styled.div`
+    img{
+        width: 100%;
+        height: 500px;
+
+    }
+`
+
 class IndividualVineyardPage extends Component {
     state = {
         vineyard: {
@@ -68,46 +94,52 @@ class IndividualVineyardPage extends Component {
         return (
             <PageBody>
                 <PageParagraphText>
-                    <PageTitle><a href={this.state.vineyard.website}>{this.state.vineyard.name}</a></PageTitle>
+                    <VineyardImage><img src={vaVineyard} alt="picture" /></VineyardImage>
+                    <VineyardSection>
 
-                    <DetailHeader>Description: </DetailHeader>
-                    <DetailText>{this.state.vineyard.description}</DetailText>
+                        <PageTitle>
+                            <a href={this.state.vineyard.website}>{this.state.vineyard.name}</a>
+                        </PageTitle>
 
-                    <DetailHeader>Address: </DetailHeader><DetailText>{this.state.vineyard.address}</DetailText>
+                        <VineyardDiv><DetailHeader>Description: </DetailHeader>
+                            <DetailText>{this.state.vineyard.description}</DetailText></VineyardDiv>
 
-                    <div>
-                        <DetailHeader> Restaurants Serving Our Wines:</DetailHeader> {this.state.vineyard.restaurants.map(restaurant => {
+                        <VineyardDiv><DetailHeader>Address: </DetailHeader>
+                            <DetailText>{this.state.vineyard.address}</DetailText></VineyardDiv>
+
+                        <VineyardDiv>
+                            <DetailHeader> Restaurants Serving Our Wines:</DetailHeader> {this.state.vineyard.restaurants.map(restaurant => {
+                                return (
+                                    <DetailText>{restaurant.name}</DetailText>
+                                )
+                            })
+                            }
+                        </VineyardDiv>
+
+                        <br />
+
+                        <DetailHeader>OUR WINES:</DetailHeader>
+                        <br />
+                        <WineList>{this.state.vineyard.wines.map(wine => {
                             return (
-                                <DetailText>{restaurant.name}</DetailText>
-                            )
-                        })
-                        }
-                    </div>
-
-                    <br />
-
-                    <DetailHeader>OUR WINES:</DetailHeader>
-                    <br />
-                    <WineList>{this.state.vineyard.wines.map(wine => {
-                        return (
-                            <div>
-                                <WineDetailNameAndButton>
-                                    <DetailText>{wine.name}</DetailText>
-                                    <button onClick={() => this.toggleShowWines(wine)}>
-                                        Show {wine.name} Details
+                                <div>
+                                    <WineDetailNameAndButton>
+                                        <DetailText>{wine.name}</DetailText>
+                                        <button onClick={() => this.toggleShowWines(wine)}>
+                                            Show {wine.name} Details
                                      </button>
-                                </WineDetailNameAndButton>
-                            </div>)
-                    })}
-                    </WineList>
-                    {this.state.showWineDetails
-                        ? <div><IndividualWineDetails vineyard={this.state.vineyard} wine={this.state.currentWineToShow}></IndividualWineDetails></div>
-                        : null
-                    }
+                                    </WineDetailNameAndButton>
+                                </div>)
+                        })}
+                        </WineList>
+                        {this.state.showWineDetails
+                            ? <div><IndividualWineDetails vineyard={this.state.vineyard} wine={this.state.currentWineToShow}></IndividualWineDetails></div>
+                            : null
+                        }
 
 
 
-
+                    </VineyardSection>
                 </PageParagraphText>
             </PageBody>
         )

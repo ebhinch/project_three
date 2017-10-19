@@ -9,6 +9,7 @@ import { FlexColumn } from "../styled-components/FlexContainers";
 import { FlexRow } from "../styled-components/FlexContainers";
 import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
+import veritas from "./veritas.jpeg"
 
 const UserColumnContainer = FlexRow.extend`
     align-items: space-around;
@@ -17,25 +18,24 @@ const UserColumnContainer = FlexRow.extend`
     height: 400px;
     width: 80%;
     margin-left: 10%;
+    margin-bottom: 55px;
 `
-
 const UserColumn = ShadowDiv.extend`
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: 20px;
-    // padding-right: 10%;
-    // padding-left: 10%;
     min-height: 100%
 `
-
-
 
 const ColumnText = styled.div`
     margin-bottom: 10px;
     margin-top: 10px;
 `
 
+const UserImage = styled.div`
+    width: 100%;
+`
 
 class UserPage extends Component {
     // This sets the initial state for the component. 
@@ -63,11 +63,15 @@ class UserPage extends Component {
         return (
             <PageBody>
                 <PageParagraphText>
+                    <UserImage>
+                        <img src={veritas} alt="picture" />
+                    </UserImage>    
+
                     <DetailHeader>Charlottesvino's Registered User Accounts</DetailHeader>
 
                     <div>To get the most out of Charlottesvino's resources and take advantage of features like our note log, either create an account or log into an existing one.</div>
                     <UserColumnContainer>
-             
+
                         <UserColumn>
                             <ColumnText>Existing Charlottesvino accounts include:</ColumnText>
 
@@ -82,7 +86,7 @@ class UserPage extends Component {
                             <SignUpForm />
 
                         </UserColumn>
-           
+
                     </UserColumnContainer>
                 </PageParagraphText>
             </PageBody>

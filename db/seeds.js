@@ -41,7 +41,7 @@ const aftonFesta = new WineModel({
     vintage: "2014",
     description: "Indicative blend: Sangiovese, Cabernet Franc, Merlot, and Petit Verdot.",
     price: 28,
-    image: "https://i.pinimg.com/736x/ab/71/ba/ab71ba3ca986d0882a241782796cda7f--road-trippin-wineries.jpg"
+    image: "https://i2.wp.com/shopatdarling.com/blog/wp-content/uploads/2015/11/MG_0266.jpg?w=1500"
 })
 
 const veritasClaret = new WineModel({

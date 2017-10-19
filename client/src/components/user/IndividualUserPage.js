@@ -9,6 +9,15 @@ import DetailHeader from "../styled-components/DetailHeader";
 import { FlexColumn } from "../styled-components/FlexContainers";
 import { FlexRow } from "../styled-components/FlexContainers";
 import styled from 'styled-components';
+import image from "./userpic.jpg"
+
+const ImageDiv = styled.div `
+    img {
+        width: 100%;
+    }
+`
+
+
 
 class IndividualUserPage extends Component {
     state = {
@@ -58,6 +67,7 @@ class IndividualUserPage extends Component {
         this.setState({ user: response.data })
     }
 
+   
 
     // showNotes = () => {
     //     const { userId } = this.props.match.params
@@ -88,11 +98,15 @@ class IndividualUserPage extends Component {
         return (
             <PageBody>
                 <PageParagraphText>
+                    <ImageDiv><img src={image} /></ImageDiv>
             <div>
-                <DetailHeader>{this.state.user.name}'s Account Page</DetailHeader>
+                <DetailHeader>{this.state.user.name}, Welcome to Your Account Page</DetailHeader>
 
                 <p>
                     <button onClick={this.toggleShowNotes}> View Your Note Board</button>
+                    <br />
+                    <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
+
                 </p>
 
                 {/* <p>
@@ -105,7 +119,6 @@ class IndividualUserPage extends Component {
 
                 {this.state.editUserDetails ? <div>
                     <EditForm user={this.state.user} updateUser={this.updateUser} userId={this.props.match.params.userId} showUser={this.showUser} toggleEdit={this.toggleEdit} />
-                    <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
 
 
                 </div> : <div>

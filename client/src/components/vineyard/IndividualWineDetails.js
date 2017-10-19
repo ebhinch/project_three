@@ -10,7 +10,8 @@ const WineDetails = FlexColumn.extend`
     align-items: center;
     text-align: center;
     img {
-        height: 300px;
+        max-height: auto;
+        width: 100%;
     }
 `
 
