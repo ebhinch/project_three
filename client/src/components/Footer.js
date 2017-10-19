@@ -17,9 +17,9 @@ const FooterBar = FlexRow.extend`
   height: 40px;
   a:hover {
     font-weight: 900;
-    color:green;
-}
-  `
+    color: rgb(157, 15, 82);
+  }
+`
 
 const Footer = () => {
   return (

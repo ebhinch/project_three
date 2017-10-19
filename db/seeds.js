@@ -153,18 +153,22 @@ const king = new VineyardModel({
 
 const victoriaNoteOne = new NoteModel({
     title: "Victoria's First Note",
-    text: "Let's go to King Family on our trip!"
+    text: "Let's go to King Family on our trip! I read that in the summer they have polo matches"
 })
 
 const skylarNoteOne = new NoteModel({
     title: "Skylar's First Note",
-    text: "Let's go to Afton!"
+    text: "Let's go to Afton! I've heard they have almost 360 degree views"
 })
 
+const hunterNoteTwo = new NoteModel({
+    title: "Rose Season",
+    text: "It'll be rose season when we get there. We should try that Crose at King Family"
+})
 
 const hunterNoteOne = new NoteModel({
-    title: "Hunter's First Wine",
-    text: "We should make dinner reservations"
+    title: "Local Restaurants",
+    text: "We should make dinner reservations. It looks like the C&O has a lot of the wines we'll be tasting"
 })
 
 const victoria = new UserModel({
@@ -188,7 +192,7 @@ const hunter = new UserModel({
     name: "Hunter",
     hometown: "Decatur",
     season: "Fall 2018",
-    notes: [hunterNoteOne]
+    notes: [hunterNoteOne, hunterNoteTwo]
 })
 
 UserModel.remove({})

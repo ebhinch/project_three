@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+
 import PageBody from "../styled-components/PageBody"
 import { FlexRow } from "../styled-components/FlexContainers";
 import ShadowDiv from "../styled-components/ShadowDiv"
@@ -29,7 +31,14 @@ const WelcomeParagraph = styled.div`
   padding-right: 10%;
   padding-top: 25px;
   text-shadow: .5px 1px #9896a4;
+  text-align: center;
+  a:hover {
+    font-weight: 900;
+    color: rgb(157, 15, 82);
+}
 `
+
+
 
 const HomeBackground = styled.div`
   background-image: url(${winemap});
@@ -52,7 +61,6 @@ const HomePageStyled = styled.div`
 }
 `
 
-
 class HomePage extends Component {
   render() {
     return (
@@ -63,6 +71,8 @@ class HomePage extends Component {
             <WelcomeText>welcome to charlottesvino</WelcomeText>
             <br />
             <WelcomeParagraph>Time to get excited about planning your trip along Charlottesville's Monticello Wine Trail! Whether you're traveling from across the country or you're local, Charlottesvino makes planning easier, so you'll have more time for enjoying the region's beautiful wineries.</WelcomeParagraph>
+
+            <WelcomeParagraph><Link to="/users">Log In or Create Account</Link></WelcomeParagraph>
 
           </HomePageStyled>
 

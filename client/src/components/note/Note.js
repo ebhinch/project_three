@@ -26,7 +26,6 @@ const NoteColumn = ShadowDiv.extend`
         font-weight: bold;
         font-size: 24px;
         font-family: 'Shadows Into Light', cursive;
-        
     }
 
     input, textarea {
@@ -36,14 +35,12 @@ const NoteColumn = ShadowDiv.extend`
         border: none;
         background-color: initial;
         font-family: 'Shadows Into Light', cursive;
-        
     }
 
     textarea{
         width: 95%;
         height: 70%;
-        font-family: 'Shadows Into Light', cursive;
-        
+        font-family: 'Shadows Into Light', cursive;   
     }
 `
 

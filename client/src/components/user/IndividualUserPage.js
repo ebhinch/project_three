@@ -17,6 +17,13 @@ const ImageDiv = styled.div`
     }
 `
 
+const PageLink = PageParagraphText.extend`
+a:hover {
+    font-weight: 900;
+    color: rgb(157, 15, 82);
+}
+`
+
 const AccountSection = FlexColumn.extend`
 color: #0f5e75;
 align-items: center;
@@ -111,9 +118,9 @@ class IndividualUserPage extends Component {
 
                         </p>
 
-                        <p>
+                        <PageLink>
                             <Link to="/users">Return to the User Directory</Link>
-                        </p>
+                        </PageLink>
 
                         {this.state.editUserDetails ? <div>
                             <EditForm user={this.state.user} updateUser={this.updateUser} userId={this.props.match.params.userId} showUser={this.showUser} toggleEdit={this.toggleEdit} />

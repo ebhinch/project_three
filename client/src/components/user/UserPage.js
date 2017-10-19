@@ -22,7 +22,11 @@ const UserColumnContainer = FlexRow.extend`
 const UserColumn = ShadowDiv.extend`
     align-items: center;
     margin-top: 20px;
-    min-height: 100%
+    min-height: 100%;
+    a:hover {
+        font-weight: 900;
+        color: rgb(157, 15, 82);
+    }
 `
 
 const ColumnText = styled.div`

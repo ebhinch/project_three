@@ -13,7 +13,7 @@ const HeaderBar = FlexRow.extend `
     box-shadow: 2px 2px 1px grey;
     a:hover {
         font-weight: 900;
-        color:green;
+        color: rgb(157, 15, 82);
     }
    `
 
