@@ -37,6 +37,9 @@
 * I am frustrated I could not get the notes on the notes-show page to align as I wanted them to. I spent a great deal of time and referenced several past examples to no avail. I would like to succesfully get these to render in a grid-like pattern.
 * Because I was so focused on utilizing strictly styled components and my own CSS, I was not able to make the app fully responsive. I would like to better understand media queries within React and improve this functionality in the future.
 
+## NOTES
+* I did want to note that with our TA, Matt's, suggestion, I added inline styling to my index.html files. Using relative positioning and "height=100%," I was able to force my footer to stay at the bottom of the browser's screen regardless of the amount of content rendered on that particular page. I know we typically avoid inline styling at all costs, but Matt noted that this was really the only way to create a footer that would stay in place. 
+
 ## RESOURCES
 * Class notes and code-along examples
 * Classmate collaboration
