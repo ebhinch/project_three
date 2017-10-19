@@ -71,7 +71,7 @@ class HomePage extends Component {
             <WelcomeText>welcome to charlottesvino</WelcomeText>
             <br />
             <WelcomeParagraph>Time to get excited about planning your trip along Charlottesville's Monticello Wine Trail! Whether you're traveling from across the country or you're local, Charlottesvino makes planning easier, so you'll have more time for enjoying the region's beautiful wineries.</WelcomeParagraph>
-
+            <br /><br /><br />
             <WelcomeParagraph><Link to="/users">Log In or Create Account</Link></WelcomeParagraph>
 
           </HomePageStyled>

@@ -85,6 +85,8 @@ class NotePage extends Component {
                     <div>
 
                         <h1>{this.state.user.name}'s Notes</h1>
+                        <div>To edit an existing note, type directly into the text fields.</div>
+
                         <button onClick={this.createNewNote}>Write New Note</button>
 
                         <br />

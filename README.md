@@ -22,6 +22,10 @@
 * Styling was accomplished through the use of styled components exclusively. In this project, I chose to do all styling independently to grow my understanding of CSS and sharpen my skills.
 
 ## APPROACH TAKEN
+* I focused a lot on planning and getting my wireframes, user models, and user stories thoughtfully setup before I started coding. More than in past projects, I found myself referecing these documents as a guide and reworking them as my user models changed and evolved as the app grew.
+* I also focused on using my own CSS styled components rather than bringing in a framework. This allowed me to continue sharpening my styling skills. I felt that this was important because in talking with professional developers, it seems front-end frameworks are rarely used for styling in the workplace. 
+* I thoughtfully organized pages, including links and buttons where they seemed most logical. I went through my app daily asking myself if I was able to navigate it easily, without having to look around too much. 
+* I also focused on using as much front-end routing as possible and am pleased that so much of my app is functional with exclusively dynamic, front-end routing. 
 
 ## REACH GOALS
 * Adding an array of restaurants to the VineyardSchema was a reach goal I was pleased to tackle. This added a second array within the schema and allowed me opportunity to continue working with nested components. 
