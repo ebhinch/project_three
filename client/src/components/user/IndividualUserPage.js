@@ -8,16 +8,30 @@ import PageParagraphText from "../styled-components/PageParagraphText"
 import DetailHeader from "../styled-components/DetailHeader";
 import { FlexColumn } from "../styled-components/FlexContainers";
 import { FlexRow } from "../styled-components/FlexContainers";
+import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
 import image from "./userpic.jpg"
 
-const ImageDiv = styled.div `
+const ImageDiv = styled.div`
     img {
         width: 100%;
     }
 `
 
+const AccountSection = FlexColumn.extend`
+color: #0f5e75;
+align-items: center;
+text-align: center;
+img {
+    width: 100%
+}
+`
 
+const AccountDiv = ShadowDiv.extend`
+    padding-right: 10px;
+    padding-left: 10px;
+
+`
 
 class IndividualUserPage extends Component {
     state = {
@@ -67,17 +81,6 @@ class IndividualUserPage extends Component {
         this.setState({ user: response.data })
     }
 
-   
-
-    // showNotes = () => {
-    //     const { userId } = this.props.match.params
-    //     const response = axios.get(`/api/users/${userId}/notes`)
-    //     this.toggleShowNotes;
-
-    //     console.log(response)
-    //     this.setState({ notes: response.data, redirectToNotes: true })
-    // }
-
 
     toggleEdit = () => {
         this.setState({ editUserDetails: !this.state.editUserDetails })
@@ -99,39 +102,37 @@ class IndividualUserPage extends Component {
             <PageBody>
                 <PageParagraphText>
                     <ImageDiv><img src={image} /></ImageDiv>
-            <div>
-                <DetailHeader>{this.state.user.name}, Welcome to Your Account Page</DetailHeader>
+                    <div>
+                        <DetailHeader>{this.state.user.name}, Welcome to Your Account Page</DetailHeader>
 
-                <p>
-                    <button onClick={this.toggleShowNotes}> View Your Note Board</button>
-                    <br />
-                    <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
+                        <p>
+                            <button onClick={this.toggleShowNotes}> View Your Note Board</button>
+                            <br />
+                            <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
 
-                </p>
+                        </p>
 
-                {/* <p>
-                    <button onClick={this.deleteUser}>Delete Account (please note that upon click, this account will be deleted)</button>
-                </p> */}
+                        <p>
+                            <Link to="/users">Return to the User Directory</Link>
+                        </p>
 
-                <p>
-                    <Link to="/users">Return to the User Directory</Link>
-                </p>
-
-                {this.state.editUserDetails ? <div>
-                    <EditForm user={this.state.user} updateUser={this.updateUser} userId={this.props.match.params.userId} showUser={this.showUser} toggleEdit={this.toggleEdit} />
+                        {this.state.editUserDetails ? <div>
+                            <EditForm user={this.state.user} updateUser={this.updateUser} userId={this.props.match.params.userId} showUser={this.showUser} toggleEdit={this.toggleEdit} />
 
 
-                </div> : <div>
-                        <h3>Name: {this.state.user.name}</h3>
-                        <h3>Username: {this.state.user.userName} </h3>
-                        <h3>Season Visiting: {this.state.user.season}</h3>
-                        <h3>Hometown: {this.state.user.hometown}</h3>
-                        <button onClick={this.toggleEdit}>Edit Account Details</button>
+                        </div> : <div>
+                                    <AccountSection><AccountDiv>
+                                <h3>Name: {this.state.user.name}</h3>
+                                <h3>Username: {this.state.user.userName} </h3>
+                                <h3>Season Visiting: {this.state.user.season}</h3>
+                                <h3>Hometown: {this.state.user.hometown}</h3>
+                                </AccountDiv></AccountSection>
+                                <button onClick={this.toggleEdit}>Edit Account Details</button>
 
+                            </div>
+                        }
                     </div>
-                }
-            </div>
-            </PageParagraphText>
+                </PageParagraphText>
             </PageBody>
         )
     }

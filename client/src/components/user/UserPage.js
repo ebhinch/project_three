@@ -38,18 +38,14 @@ const UserImage = styled.div`
 `
 
 class UserPage extends Component {
-    // This sets the initial state for the component. 
     state = {
         users: []
     }
 
-    // Call the getAllUsers method as soon as the component is created
     componentWillMount() {
         this.getAllUsers()
     }
 
-    // Use axios to get all users
-    // async/await is being used here instead of promises
     getAllUsers = async () => {
         try {
             const response = await axios.get("/api/users")
@@ -65,7 +61,7 @@ class UserPage extends Component {
                 <PageParagraphText>
                     <UserImage>
                         <img src={veritas} alt="picture" />
-                    </UserImage>    
+                    </UserImage>
 
                     <DetailHeader>Charlottesvino's Registered User Accounts</DetailHeader>
 
