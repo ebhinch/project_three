@@ -18,6 +18,10 @@ const WineryPreview = FlexColumn.extend`
     img {
         height: 300px;
     }
+    a:hover {
+        font-weight: 900;
+        color: rgb(157, 15, 82);
+    }
 `
 
 const VineyardImage = styled.div`
