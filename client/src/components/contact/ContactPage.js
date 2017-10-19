@@ -9,12 +9,12 @@ import styled from 'styled-components';
 import va from "./va.jpg"
 
 const ContactSection = FlexColumn.extend`
-color: #0f5e75;
-align-items: center;
-text-align: center;
-img {
-    width: 100%
-}
+    color: #0f5e75;
+    align-items: center;
+    text-align: center;
+    img {
+        width: 100%
+    }
 `
 const ContactDiv = ShadowDiv.extend`
     padding-right: 10px;

@@ -5,7 +5,6 @@ import SignUpForm from "./SignUpForm.js"
 import PageBody from "../styled-components/PageBody"
 import PageParagraphText from "../styled-components/PageParagraphText"
 import DetailHeader from "../styled-components/DetailHeader";
-import { FlexColumn } from "../styled-components/FlexContainers";
 import { FlexRow } from "../styled-components/FlexContainers";
 import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
@@ -22,8 +21,6 @@ const UserColumnContainer = FlexRow.extend`
 `
 const UserColumn = ShadowDiv.extend`
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     margin-top: 20px;
     min-height: 100%
 `

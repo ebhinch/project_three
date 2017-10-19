@@ -7,7 +7,6 @@ import PageBody from "../styled-components/PageBody"
 import PageParagraphText from "../styled-components/PageParagraphText"
 import DetailHeader from "../styled-components/DetailHeader";
 import { FlexColumn } from "../styled-components/FlexContainers";
-import { FlexRow } from "../styled-components/FlexContainers";
 import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
 import image from "./userpic.jpg"

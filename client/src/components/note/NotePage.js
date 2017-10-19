@@ -3,7 +3,7 @@ import axios from "axios"
 import NotesList from "./NotesList"
 import PageBody from "../styled-components/PageBody"
 import PageParagraphText from "../styled-components/PageParagraphText"
-import styled from 'styled-components';
+
 
 
 class NotePage extends Component {
@@ -75,29 +75,32 @@ class NotePage extends Component {
             this.setState({ user: response.data })
         } catch (error) {
             console.log(error)
-    }
-}
-
-        render() {
-            return (
-                <PageBody>
-                    <PageParagraphText>
-                <div>
-                    <h1>{this.state.user.name}'s Notes</h1>
-                    <button onClick={this.createNewNote}>Write New Note</button>
-
-                    <NotesList
-                        notes={this.state.user.notes}
-                        handleChange={this.handleChange}
-                        deleteNote={this.deleteNote}
-                        updateNote={this.updateNote}
-                    />
-
-                </div>
-                </PageParagraphText>
-                </PageBody>
-            )
         }
     }
 
-    export default NotePage;
+    render() {
+        return (
+            <PageBody>
+                <PageParagraphText>
+                    <div>
+
+                        <h1>{this.state.user.name}'s Notes</h1>
+                        <button onClick={this.createNewNote}>Write New Note</button>
+
+                        <br />
+
+                        <NotesList
+                            notes={this.state.user.notes}
+                            handleChange={this.handleChange}
+                            deleteNote={this.deleteNote}
+                            updateNote={this.updateNote}
+                        />
+
+                    </div>
+                </PageParagraphText>
+            </PageBody>
+        )
+    }
+}
+
+export default NotePage;

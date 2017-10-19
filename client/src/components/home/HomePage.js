@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PageBody from "../styled-components/PageBody"
-import { FlexRow } from "../styled-components/FlexContainers"
-import { FlexColumn } from "../styled-components/FlexContainers"
+import { FlexRow } from "../styled-components/FlexContainers";
 import ShadowDiv from "../styled-components/ShadowDiv"
 import styled from 'styled-components';
 import winemap from "./winemap.jpg";
@@ -59,16 +58,11 @@ class HomePage extends Component {
     return (
       <HomeBackground>
         <PageBody>
-          {/* <img src={winemap} alt="wine map" /> */}
 
           <HomePageStyled>
             <WelcomeText>welcome to charlottesvino</WelcomeText>
             <br />
             <WelcomeParagraph>Time to get excited about planning your trip along Charlottesville's Monticello Wine Trail! Whether you're traveling from across the country or you're local, Charlottesvino makes planning easier, so you'll have more time for enjoying the region's beautiful wineries.</WelcomeParagraph>
-
-      
-
-            {/* <img src={winemap} alt="wine map" /> */}
 
           </HomePageStyled>
 
