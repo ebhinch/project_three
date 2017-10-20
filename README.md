@@ -36,9 +36,10 @@
 ## UNSOLVED PROBLEMS & TASKS FOR FUTURE
 * I am frustrated I could not get the notes on the notes-show page to align as I wanted them to. I spent a great deal of time and referenced several past examples to no avail. I would like to succesfully get these to render in a grid-like pattern.
 * Because I was so focused on utilizing strictly styled components and my own CSS, I was not able to make the app fully responsive. I would like to better understand media queries within React and improve this functionality in the future.
+* I also wish I had better been able to create more stateless components and fewer stateful ones. I think I didn't fully understand the difference between the two and why stateless componenets were a superior choice until I was part way through the project. I'd like to improve my skills, so I can use more stateless components in the future. I am pleased I was able to only declare state in one file of my Notes component.
 
 ## NOTES
-* I did want to note that with our TA, Matt's, suggestion, I added inline styling to my index.html files. Using relative positioning and "height=100%," I was able to force my footer to stay at the bottom of the browser's screen regardless of the amount of content rendered on that particular page. I know we typically avoid inline styling at all costs, but Matt noted that this was really the only way to create a footer that would stay in place. 
+* I did want to note that per our TA, Matt's, suggestion and guidance, I added inline styling to my index.html files. Using relative positioning and "height=100%," I was able to force my footer to stay at the bottom of the browser's screen regardless of the amount of content rendered on that particular page. I know we typically avoid inline styling at all costs, but Matt noted that this was really the only way to create a footer that would stay in place. 
 
 ## RESOURCES
 * Class notes and code-along examples
