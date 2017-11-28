@@ -11,7 +11,7 @@
 
 
 ## LINKS TO APP
-* [Deployed to Heroku](https://desolate-spire-84354.herokuapp.com/) 
+* [Deployed to Heroku](https://charlottesvino.herokuapp.com/) 
 * [GitHub](https://github.com/ebhinch/project_three) 
 
 ## PORTFOLIO SITE LINK
